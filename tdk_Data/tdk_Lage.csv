@@ -68,7 +68,7 @@
 68;40;;;B;SIII
 69;40;;;E;B2, F3, C3, F1
 70;40;;;B, E, E, E;SI, F3, E3, A1
-71;40;;;C, D, F, F, F, F, F, F,;SIV, C2, B1, D1, E1, C1, A3, A2
+71;40;;;C, D, F, F, F, F, F, F;SIV, C2, B1, D1, E1, C1, A3, A2
 72;40;;;C, C, E;SIII, SIV, C1
 73;40;;;D, C, A, E, D, F, F, F, E, F, F, F, F, D;A1, SII, A, F3, B1, B1, D1, A1, B3, E1, C1, A3, E2, F2
 74;40;;;C, D, E, F, F, C-F;A1, SII, D3, C1, A3, C-F
@@ -274,5 +274,5 @@
 274;64;;;A;A
 275;64;;;B, B, B, A;SII-N, SII, SII-S, A
 276;64;;;B, B, B, A;SII-N
-277;64;;;B, B, B, A, A, B, B;SII-N, SII, SII-S, A, A, SI, SI-W,
+277;64;;;B, B, B, A, A, B, B;SII-N, SII, SII-S, A, A, SI, SI-W
 278;64;;;B;SII-N, SII
