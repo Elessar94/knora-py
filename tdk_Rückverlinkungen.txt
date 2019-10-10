@@ -1,1 +1,3 @@
 Kampagne: kampagneBild
+Bild: bildSMFund
+Zeichnung: zeichnungSMFund. ALSO ADD THIS TO ONTOLOGY
