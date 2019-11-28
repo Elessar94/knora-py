@@ -23,6 +23,7 @@ kampagne_file = "tdk_Kampagne.csv"
 zeichnung_file = "tdk_Zeichnungen.csv"
 pub_file = "tdk_Publikation.csv"
 smfund_file = "tdk_SMFUND.csv"
+bild_file = "tdk_Bilder.csv"
 
 
 class tdk_create_data:
@@ -99,7 +100,6 @@ class tdk_create_data:
                                                               json)['iri']
 
     def create_bild(self, bild_file):
-        #TODO: Implement this
         listsep = '/'
         with open(bild_file, encoding='utf-8') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=';', quotechar='"')
@@ -368,8 +368,15 @@ pprint("_______________________________________")
 pprint("_______________________________________")
 pprint("Done with ZEICHNUNG")
 pprint("_______________________________________")
-c.create_publikation(pub_file)
+#c.create_publikation(pub_file)
 pprint("_______________________________________")
 pprint("Done with PUBLIKATION")
 pprint("_______________________________________")
-c.create_smfund(smfund_file)
+#c.create_smfund(smfund_file)
+pprint("_______________________________________")
+pprint("Done with SMFUND")
+pprint("_______________________________________")
+c.create_bild(bild_file)
+pprint("_______________________________________")
+pprint("Done with BILD")
+pprint("_______________________________________")
