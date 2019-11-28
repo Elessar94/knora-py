@@ -4,7 +4,8 @@ import os
 import re
 from knora import Knora, Sipi
 server = "http://0.0.0.0:3333"
-user = "root@example.com"
+#user = "root@example.com"
+user = "tdk0805import@example.com"
 password = "test"
 projectcode = "0805"
 ontoname = "tdk_onto"
@@ -356,15 +357,15 @@ class tdk_create_data:
 
 
 c = tdk_create_data()
-#c.create_lage(lage_file)
+c.create_lage(lage_file)
 pprint("_______________________________________")
 pprint("Done with LAGE")
 pprint("_______________________________________")
-#c.create_kampagne(kampagne_file)
+c.create_kampagne(kampagne_file)
 pprint("_______________________________________")
 pprint("Done with KAMPAGNE")
 pprint("_______________________________________")
-#c.create_zeichnungen(zeichnung_file)
+c.create_zeichnungen(zeichnung_file)
 pprint("_______________________________________")
 pprint("Done with ZEICHNUNG")
 pprint("_______________________________________")

@@ -1,725 +1,725 @@
 {
    "Autor": {
-      "id": "http://rdfh.ch/lists/0805/N22FDFt4QE-uPUGer-8K5Q",
+      "id": "http://rdfh.ch/lists/0805/3bfDJFJLTK2i_47b_Iip6Q",
       "nodes": [
          {
             "UBKVP": {
-               "id": "http://rdfh.ch/lists/0805/jxZk6o6xRAK9FquWrSQCgQ"
+               "id": "http://rdfh.ch/lists/0805/WkGfeQzwT6CKH9MTDYaOoA"
             }
          },
          {
             "M.Ka\u010di\u010dnik": {
-               "id": "http://rdfh.ch/lists/0805/5Y2KTEdyQ66BSPH2rHWvDQ"
+               "id": "http://rdfh.ch/lists/0805/JkyrgAjuR56UBfHjSR89qQ"
             }
          }
       ]
    },
    "Brandspuren": {
-      "id": "http://rdfh.ch/lists/0805/C19UjypAQFmSgWRZcvczOw",
+      "id": "http://rdfh.ch/lists/0805/d611rwgwRvulqJyFJtanSA",
       "nodes": [
          {
             "Verf\u00e4rbung": {
-               "id": "http://rdfh.ch/lists/0805/fhp7acsITX2T3EZahMCLFA"
+               "id": "http://rdfh.ch/lists/0805/7hoV24VXRvCikpkAxvzGGQ"
             }
          },
          {
             "Verkohlt": {
-               "id": "http://rdfh.ch/lists/0805/6wJcZ7eJQ1idTNMBM0v-lQ"
+               "id": "http://rdfh.ch/lists/0805/99eEfZIjR1q4PjB82fruZw"
             }
          },
          {
             "Verrusst": {
-               "id": "http://rdfh.ch/lists/0805/2BZP_cI6Rq2AJtlE4DQh0g"
+               "id": "http://rdfh.ch/lists/0805/_4Dc2y41R6qF8GMYNISIxg"
             }
          },
          {
             "Geschmolzen": {
-               "id": "http://rdfh.ch/lists/0805/8O7HR9eSSZmC98IK-TNwkA"
+               "id": "http://rdfh.ch/lists/0805/9Ejkgm4kS9WdAWxCPU2pAw"
             }
          },
          {
             "Verbrannt": {
-               "id": "http://rdfh.ch/lists/0805/F_28To6xRPuP7fiD6aH-jw"
+               "id": "http://rdfh.ch/lists/0805/F0E25vRhQsOB4wOBRpBKOQ"
             }
          }
       ]
    },
    "DatierungOne": {
-      "id": "http://rdfh.ch/lists/0805/qSP_-IDxSZWG2ZF20_NZQA",
+      "id": "http://rdfh.ch/lists/0805/vYd7uf7PQU2FAdLz2qLGuA",
       "nodes": [
          {
             "Vorgeschichte": {
-               "id": "http://rdfh.ch/lists/0805/cqWUoq4fQhOws5yq2Ap7Wg"
+               "id": "http://rdfh.ch/lists/0805/rnHZ2vYaRUarfJOKZdY7Zw"
             }
          },
          {
             "Pr\u00e4dynastischeZeit": {
-               "id": "http://rdfh.ch/lists/0805/BnZuR17hQpe6_jGgEbnmMw"
+               "id": "http://rdfh.ch/lists/0805/9FXkiPp3TG6ZygdWET9RQQ"
             }
          },
          {
             "Fr\u00fchdynastischeZeit": {
-               "id": "http://rdfh.ch/lists/0805/_k-OvMCFR4Kwc107XdmaNQ"
+               "id": "http://rdfh.ch/lists/0805/kMvBrcJrRBCQZ5RLtsQRpQ"
             }
          },
          {
             "AltesReich": {
-               "id": "http://rdfh.ch/lists/0805/wUb08YYTRIGvKMvuCc0onQ"
+               "id": "http://rdfh.ch/lists/0805/piUpoSyiSQ2JX6R3SzgAPg"
             }
          },
          {
             "ErsteZwischenzeit": {
-               "id": "http://rdfh.ch/lists/0805/EgbffvdeRomq8xcDo0UEqw"
+               "id": "http://rdfh.ch/lists/0805/7cQrn2E-RGGhggM9N31mRg"
             }
          },
          {
             "MittleresReich": {
-               "id": "http://rdfh.ch/lists/0805/DOFQ0rcrQuuz2ACfnRdKdw"
+               "id": "http://rdfh.ch/lists/0805/I-ZJxMBLTnOt-ZXTbqnRQg"
             }
          },
          {
             "ZweiteZwischenzeit": {
-               "id": "http://rdfh.ch/lists/0805/CLhyxcYtSIGz3Oa6R78HZw"
+               "id": "http://rdfh.ch/lists/0805/WdqJpRhmSNWdX51ihYnXzw"
             }
          },
          {
             "NeuesReich": {
-               "id": "http://rdfh.ch/lists/0805/tev4jn0DTIOUCFVqeO-5qA"
+               "id": "http://rdfh.ch/lists/0805/7O4mXHS0RH2UnU7gN5NSow"
             }
          },
          {
             "DritteZwischenzeit": {
-               "id": "http://rdfh.ch/lists/0805/XfzkE3j0QmCTiRs1bVXPhw"
+               "id": "http://rdfh.ch/lists/0805/8R_tPeV8Ss-KoUYor7Yebw"
             }
          },
          {
             "Sp\u00e4tzeit": {
-               "id": "http://rdfh.ch/lists/0805/L6eDy-ZZQeqenhcHLXBWbQ"
+               "id": "http://rdfh.ch/lists/0805/0pM0Vqm8Q1-1YcGc5Iebjw"
             }
          },
          {
             "Griechisch-r\u00f6mischeZeit": {
-               "id": "http://rdfh.ch/lists/0805/QxXPyDizRKC2w6prajC0hA"
+               "id": "http://rdfh.ch/lists/0805/zK-CZHOISXWwe8FHOnyfOA"
             }
          },
          {
             "Moderne": {
-               "id": "http://rdfh.ch/lists/0805/0y8_7NVGQQ-BdlGRrfRo6g"
+               "id": "http://rdfh.ch/lists/0805/NOm4OJq9QoO_d67dXmqQdw"
             }
          }
       ]
    },
    "DatierungTwo": {
-      "id": "http://rdfh.ch/lists/0805/6k-OmiZvSuybTz9dYspHnw",
+      "id": "http://rdfh.ch/lists/0805/3Vz2Ehr7QoCcaURGCyY31w",
       "nodes": [
          {
             "0.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/IdSUjIQOSsq-Byde8UJUAw"
+               "id": "http://rdfh.ch/lists/0805/XYiCSo5GQsqVR4q33yD5Cw"
             }
          },
          {
             "1.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/WyfWBNQCTV-463Xw658oTQ"
+               "id": "http://rdfh.ch/lists/0805/pvgfvc1RTIO1zaKT-2E43Q"
             }
          },
          {
             "2.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/ynwZ-aiSQfGBGhxcSkZE-w"
+               "id": "http://rdfh.ch/lists/0805/kZMJkY6mRcOzSfmIZcnufQ"
             }
          },
          {
             "3.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/1Mbt7glGQX-oYNE2p3tjug"
+               "id": "http://rdfh.ch/lists/0805/5mYWubA-TCSomMbMfMyo1A"
             }
          },
          {
             "4.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/jNLRIO3lRQuTeWfdTvgY8g"
+               "id": "http://rdfh.ch/lists/0805/9eD2yxCzSxyXDfZAh-QPgg"
             }
          },
          {
             "5.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/8Gfb5Ub4QvG_pnuXd8g7xg"
+               "id": "http://rdfh.ch/lists/0805/0jK2GgyNQrGlzqhG3V1ULg"
             }
          },
          {
             "6.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/QeSLhzCBSCq_IVGTbQHX3g"
+               "id": "http://rdfh.ch/lists/0805/RqxP9CvZStm9zMjz-TWwXA"
             }
          },
          {
             "7.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/Pibcu0o7SLu71gbZzyi_9g"
+               "id": "http://rdfh.ch/lists/0805/k0yFk23zSZSsSwMyz1SDyw"
             }
          },
          {
             "8.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/mLz-qvOdT3KtnSx5N0Oq-g"
+               "id": "http://rdfh.ch/lists/0805/tC4zYNUbQ7e-F1zzW6kx6g"
             }
          },
          {
             "9.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/bCq-Xy2NToG-4FUBe5DoMw"
+               "id": "http://rdfh.ch/lists/0805/9ThRE_iMR0OWuzNDp8aUPg"
             }
          },
          {
             "10.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/hJHFFIrCTpK3a5NlwmnORA"
+               "id": "http://rdfh.ch/lists/0805/MnZyV0UgSm2vcXolEhR1fw"
             }
          },
          {
             "11.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/K5qrDNmGRb-o1s8juGOG0g"
+               "id": "http://rdfh.ch/lists/0805/xBEZ8ZIVTSSN6u3t9f2BVw"
             }
          },
          {
             "12.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/Hspo40VVR6mIq3vWb1JJ-Q"
+               "id": "http://rdfh.ch/lists/0805/lMKnhACAR06OCsz1XfRLrw"
             }
          },
          {
             "13.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/m6RcMKTqTxWZgCky8fg7ZQ"
+               "id": "http://rdfh.ch/lists/0805/Af5id7d7R0qLyIF39qWDag"
             }
          },
          {
             "14.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/vzzpibOvTRGlPpJGZLPBnw"
+               "id": "http://rdfh.ch/lists/0805/a2dAxcRZSNCxIjOlgRZvog"
             }
          },
          {
             "15.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/We5j7kXoQlS9W_fOLMux6w"
+               "id": "http://rdfh.ch/lists/0805/qeG0KoOKRDaOczhhP-XBaw"
             }
          },
          {
             "16.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/oz7UDgoPScmFUVzUY3uBSw"
+               "id": "http://rdfh.ch/lists/0805/WOx1UHziR-WY4W-T-CyCKg"
             }
          },
          {
             "17.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/ZI60M428TdKGdrltpHh2gw"
+               "id": "http://rdfh.ch/lists/0805/ODaPiaXjSrWf5d0gt2Wwdw"
             }
          },
          {
             "18.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/cHnLZYZ9T8i_6rsEkh5pLg"
+               "id": "http://rdfh.ch/lists/0805/R7PEMLSPT1uEg1Qoe8TcWA"
             }
          },
          {
             "19.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/sM756ecaSXiuEx3Nh4rRsw"
+               "id": "http://rdfh.ch/lists/0805/Xei17iUaQ6SMNJJUNbmgeg"
             }
          },
          {
             "20.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/6lO6x22CQVa3fN7a9VGREg"
+               "id": "http://rdfh.ch/lists/0805/tbqQz6B_Suyy8VrjwdSckw"
             }
          },
          {
             "21.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/kwgIiPfIRPW-pj75RFzipw"
+               "id": "http://rdfh.ch/lists/0805/ksy9NR_JQlmPWddWLNcdzQ"
             }
          },
          {
             "22.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/Xxj36A0IQca2mQ64gfSL-g"
+               "id": "http://rdfh.ch/lists/0805/vMJ5R1bGTfCulvSBoe_pAw"
             }
          },
          {
             "23.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/TYcB0iy7THGEwymGfjhwIg"
+               "id": "http://rdfh.ch/lists/0805/aowPoucpQwO9oAZCi4W01A"
             }
          },
          {
             "24.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/0U07nhuRQNWtjvJTMo9K3w"
+               "id": "http://rdfh.ch/lists/0805/YYGlQCfATTqsCH1k3rQb_Q"
             }
          },
          {
             "25.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/s0Udx6ujTYW6ga-5tBF-WA"
+               "id": "http://rdfh.ch/lists/0805/5BQfiQhdToGDa5dcWdNbmA"
             }
          },
          {
             "26.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/Sv3J_xQcSBC6_dzBHXAkvg"
+               "id": "http://rdfh.ch/lists/0805/lbcvC0dHTZC_9vJjTP7SfQ"
             }
          },
          {
             "27.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/fDfhRmuTQoe-JVI5txJxVw"
+               "id": "http://rdfh.ch/lists/0805/0K3kcGHtTcSQVSOa5vXpxQ"
             }
          },
          {
             "28.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/Gtupx8I_RFekopW2f-5NMQ"
+               "id": "http://rdfh.ch/lists/0805/E_KUgnYjQEWqEfP8OrctXQ"
             }
          },
          {
             "29.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/DcHzv12tSpWeQz0qKVQ_BQ"
+               "id": "http://rdfh.ch/lists/0805/FMAum6SIQL2NB_xGyfpeYQ"
             }
          },
          {
             "30.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/GX5Xf1WnQ_StM0bZ3hmznA"
+               "id": "http://rdfh.ch/lists/0805/WMvNZbOSRPupofNzgqOvIg"
             }
          },
          {
             "31.Dynastie": {
-               "id": "http://rdfh.ch/lists/0805/NyVlzyKwSFuVvl0GUVgJeA"
+               "id": "http://rdfh.ch/lists/0805/hhAaoggcQzy-tF_xvcs1lQ"
             }
          }
       ]
    },
    "Dekoration": {
-      "id": "http://rdfh.ch/lists/0805/0y3L5YAESL-5569YgfDdJw",
+      "id": "http://rdfh.ch/lists/0805/phxBgWEFQ22e6RkIIZ5g-w",
       "nodes": [
          {
             "Bemalt": {
-               "id": "http://rdfh.ch/lists/0805/oBBJnNP_RNCajDHNHuzNJQ"
+               "id": "http://rdfh.ch/lists/0805/DeGpLS_XR3Kda__c3woGzA"
             }
          },
          {
             "Beschriftet": {
-               "id": "http://rdfh.ch/lists/0805/eK8rwOhWTTWNXPxWgnNyyw"
+               "id": "http://rdfh.ch/lists/0805/f-rB9UqmQM2HcDb6XUfHuA"
             }
          },
          {
             "Abdruck": {
-               "id": "http://rdfh.ch/lists/0805/H7aYdAVwQh2On8EmaPgHTw"
+               "id": "http://rdfh.ch/lists/0805/5n1R_uOJRwe7f_AoYbNVkA"
             }
          },
          {
             "Relief": {
-               "id": "http://rdfh.ch/lists/0805/NDBuQO9lRwKNaOJg2R5NKg"
+               "id": "http://rdfh.ch/lists/0805/wRNgf0qzTHOoPSQ2sbA_YA"
             }
          },
          {
             "Einlagen": {
-               "id": "http://rdfh.ch/lists/0805/xXSnECgdQEyBLy8zxHwMxg"
+               "id": "http://rdfh.ch/lists/0805/a0Z63BgKSGWK6zHMNHsQcA"
             }
          }
       ]
    },
    "Feuchtigkeit": {
-      "id": "http://rdfh.ch/lists/0805/5EeE8lz1S-y0AHUw2FG2hg",
+      "id": "http://rdfh.ch/lists/0805/4lhqBLNEREW5TlRWuWwr1g",
       "nodes": [
          {
             "Ja": {
-               "id": "http://rdfh.ch/lists/0805/jzOnPE8aS-2yL1UCs4gHqg"
+               "id": "http://rdfh.ch/lists/0805/QFLJq2msSNuYmTkzXVCcfw"
             }
          },
          {
             "Nein": {
-               "id": "http://rdfh.ch/lists/0805/tVXQo88sRveLVzfdcsgR9w"
+               "id": "http://rdfh.ch/lists/0805/y5f9g4CpR8Gy7w9_Fa9YfA"
             }
          }
       ]
    },
    "Material": {
-      "id": "http://rdfh.ch/lists/0805/hOKHo6dvR5-21Fw7ndupmA",
+      "id": "http://rdfh.ch/lists/0805/gthenxSYS22MZrUajTYZOg",
       "nodes": [
          {
             "Anthropolologisch": {
-               "id": "http://rdfh.ch/lists/0805/wyMPL1kLTYWMc_RyOKRsJQ"
+               "id": "http://rdfh.ch/lists/0805/XbAFbGDrQ3OeGW3I7noTwA"
             }
          },
          {
             "Zoologisch": {
-               "id": "http://rdfh.ch/lists/0805/RC9LgxY4Qv6zBcR-15Puxw"
+               "id": "http://rdfh.ch/lists/0805/nc1s7vJ0TOeKuyE6DkKeBg"
             }
          },
          {
             "Botanisch": {
-               "id": "http://rdfh.ch/lists/0805/L086lbvlQiCeNyS_UYfJWQ"
+               "id": "http://rdfh.ch/lists/0805/oFX_pkVDSDeW_w8mi8yhsA"
             }
          },
          {
             "Geologisch": {
-               "id": "http://rdfh.ch/lists/0805/OEAa0C8mT4Keyqg9e0EL6A"
+               "id": "http://rdfh.ch/lists/0805/BpKcTlJgQP2smDh8puumnA"
             }
          },
          {
             "Komposit": {
-               "id": "http://rdfh.ch/lists/0805/0-k1dRpFQCylWHgaFionUA"
+               "id": "http://rdfh.ch/lists/0805/ziN6BuR9R-eo4v_Tplx-gg"
             }
          }
       ]
    },
    "MaterialZusatz": {
-      "id": "http://rdfh.ch/lists/0805/M6EYAtdoSBOUh5w0mSS5dA",
+      "id": "http://rdfh.ch/lists/0805/P-DqVyRsQLezfnOKDESVVg",
       "nodes": [
          {
             "Fayence": {
-               "id": "http://rdfh.ch/lists/0805/EkJJaLZGSyWKGqLRv737jA"
+               "id": "http://rdfh.ch/lists/0805/E4M4HbleTmiH1hpYA586Gg"
             }
          },
          {
             "Wachs": {
-               "id": "http://rdfh.ch/lists/0805/CD18XidhQFmOiRqvWcvtug"
+               "id": "http://rdfh.ch/lists/0805/A1uW-CLMQHaW5dhTAgI_xg"
             }
          },
          {
             "Dung": {
-               "id": "http://rdfh.ch/lists/0805/CygRXgc8RrGeOiStxjyITQ"
+               "id": "http://rdfh.ch/lists/0805/i02qOIaVTSGmWv6mX3Hw-w"
             }
          },
          {
             "Glas": {
-               "id": "http://rdfh.ch/lists/0805/atvgizbYScGJvqk_oVEctw"
+               "id": "http://rdfh.ch/lists/0805/u9xVKql9S0S61xBHPan5Rg"
             }
          },
          {
             "Kartonage": {
-               "id": "http://rdfh.ch/lists/0805/uzgXOCD5RLaKmGIkQOcTKg"
+               "id": "http://rdfh.ch/lists/0805/-UN4Jm-KRQiSHCcc6aXtHg"
             }
          },
          {
             "Keramik": {
-               "id": "http://rdfh.ch/lists/0805/UOsiyR3GRe65yCC58ECrNA"
+               "id": "http://rdfh.ch/lists/0805/Gi-5t0m_QdC9M4Qmy3NQ5g"
             }
          },
          {
             "Textil": {
-               "id": "http://rdfh.ch/lists/0805/kE0UqfMXRCee3W1MKR3ywA"
+               "id": "http://rdfh.ch/lists/0805/P9_Dg_9ORBaL6JkZJcpffA"
             }
          },
          {
             "Zahn": {
-               "id": "http://rdfh.ch/lists/0805/BSJRwAV-Qa228RgMYGZwPA"
+               "id": "http://rdfh.ch/lists/0805/ez6dreaORLy8zEHuJ9dN1w"
             }
          },
          {
             "Knochen": {
-               "id": "http://rdfh.ch/lists/0805/BXcvf5-JTTWgF9isDu-dPQ"
+               "id": "http://rdfh.ch/lists/0805/yHQkFYMzR4K5mFN12oXBJg"
             }
          },
          {
             "Haare": {
-               "id": "http://rdfh.ch/lists/0805/OPsAWUJVTGqpLyIdDbkS3A"
+               "id": "http://rdfh.ch/lists/0805/JgXY-zHQTNOZAthcOxFytA"
             }
          },
          {
             "Granit": {
-               "id": "http://rdfh.ch/lists/0805/bxD2mRXyQqmUiHHPSNvong"
+               "id": "http://rdfh.ch/lists/0805/X058NDzWRi6zFfu6kFptJg"
             }
          },
          {
             "Kalkstein": {
-               "id": "http://rdfh.ch/lists/0805/Ch7HEdCDR8mJpkctR3i-fw"
+               "id": "http://rdfh.ch/lists/0805/L6A1iMggRG-8_V0EeyvzMg"
             }
          },
          {
             "\u00c4gyptischerAlabaster": {
-               "id": "http://rdfh.ch/lists/0805/rchYWnefTVOnvXle4Y9_WQ"
+               "id": "http://rdfh.ch/lists/0805/ID6GTVZHQ_SwsNQY89dKpg"
             }
          },
          {
             "Basalt": {
-               "id": "http://rdfh.ch/lists/0805/4YmkcXCiSo--_NxdE7OFgg"
+               "id": "http://rdfh.ch/lists/0805/Rx_A7BhoTFy-lOdmbSJ9LQ"
             }
          },
          {
             "Flint": {
-               "id": "http://rdfh.ch/lists/0805/4oWlRtclRfu5jsx5yf0-6g"
+               "id": "http://rdfh.ch/lists/0805/E5sSbL2WTNCA-hM7IQk-hg"
             }
          },
          {
             "Schiefer": {
-               "id": "http://rdfh.ch/lists/0805/AwB4BrKDR4uw4NWlBBOA0A"
+               "id": "http://rdfh.ch/lists/0805/Yv5ViJgzQ2SQfDA1Ukxnzg"
             }
          },
          {
             "Unbekannt": {
-               "id": "http://rdfh.ch/lists/0805/N4u7eVHhRa6YuWhtlfiJmQ"
+               "id": "http://rdfh.ch/lists/0805/OXQE5UeaQIyc6GNO8qTUVA"
             }
          },
          {
             "Obsidian": {
-               "id": "http://rdfh.ch/lists/0805/Y0K798uYQmyE8dTM8ErHKg"
+               "id": "http://rdfh.ch/lists/0805/vOnEsV39SBCrg-LwP9Zzzg"
             }
          },
          {
             "Bronze": {
-               "id": "http://rdfh.ch/lists/0805/pJ6O6QOYTKKk_33VVGoSZw"
+               "id": "http://rdfh.ch/lists/0805/rVppP7oRQyS4Q9WyotuF0w"
             }
          },
          {
             "Muna": {
-               "id": "http://rdfh.ch/lists/0805/FXQaN4ogTpudp9pYMPfdCQ"
+               "id": "http://rdfh.ch/lists/0805/faHfZCDmQyWAMlT6quI6Aw"
             }
          },
          {
             "Holz": {
-               "id": "http://rdfh.ch/lists/0805/sHdgxQdgR02u1nmVvn4zlw"
+               "id": "http://rdfh.ch/lists/0805/k50hM9aPQaKXWrY5HY3Swg"
             }
          },
          {
             "Samen": {
-               "id": "http://rdfh.ch/lists/0805/oAspqG0EQYyVorXCq729cA"
+               "id": "http://rdfh.ch/lists/0805/1mv-Qc7QT7aVoop8KsgUSg"
             }
          },
          {
             "Nilton": {
-               "id": "http://rdfh.ch/lists/0805/zwrSy5A1RzuAI8JljuVeLA"
+               "id": "http://rdfh.ch/lists/0805/jvicqLQtQ6-QV8f6leuuJw"
             }
          },
          {
             "Gips": {
-               "id": "http://rdfh.ch/lists/0805/Mj7ESELfQxmCYSZxZgdzFw"
+               "id": "http://rdfh.ch/lists/0805/K8_u90yXQcy-3HLSNS7moA"
             }
          },
          {
             "Bitumen": {
-               "id": "http://rdfh.ch/lists/0805/d8I0rohERwq28hsuE4f1Ow"
+               "id": "http://rdfh.ch/lists/0805/gy3kdHBkSLyKe9DMCpJUpw"
             }
          },
          {
             "Nilschlamm": {
-               "id": "http://rdfh.ch/lists/0805/dfwuHaM0Q0604QpDacGkqg"
+               "id": "http://rdfh.ch/lists/0805/YY07p4qRRo6m4uuh3hk6yw"
             }
          },
          {
             "Paste": {
-               "id": "http://rdfh.ch/lists/0805/qsOIVOh_SNKZF8LYuojJSA"
+               "id": "http://rdfh.ch/lists/0805/PsEOlkRvSouPIkFIync7hA"
             }
          },
          {
             "Fritte": {
-               "id": "http://rdfh.ch/lists/0805/yHAMaDUYRpmAfB9x-pY8EQ"
+               "id": "http://rdfh.ch/lists/0805/MSE9EMZJSu655mMxIPS_ag"
             }
          },
          {
             "Grauwacke": {
-               "id": "http://rdfh.ch/lists/0805/1Fj5fdO6SGi7S1ZUFYb8Qw"
+               "id": "http://rdfh.ch/lists/0805/0VBJMtruR_KsBKq4Ghvm9g"
             }
          },
          {
             "Quarzit": {
-               "id": "http://rdfh.ch/lists/0805/_89_hxqcRXeDAMlWabAPRg"
+               "id": "http://rdfh.ch/lists/0805/QfgwakhzQomf5G1uPQ2BnA"
             }
          },
          {
             "Serpentin": {
-               "id": "http://rdfh.ch/lists/0805/p4-AvJD5S3qferKsICgirA"
+               "id": "http://rdfh.ch/lists/0805/0xAexH9oRByi2J83AjFrLw"
             }
          },
          {
             "Feldspat": {
-               "id": "http://rdfh.ch/lists/0805/HWvtEs0rRXivXYJe3j4s-Q"
+               "id": "http://rdfh.ch/lists/0805/znrhZgv9RMOAWsU6WYBOLQ"
             }
          }
       ]
    },
    "Objekttyp": {
-      "id": "http://rdfh.ch/lists/0805/uh8DmUm2S1OVRExieNvXGQ",
+      "id": "http://rdfh.ch/lists/0805/07UufFQRTdm4d1ph3rk3Cg",
       "nodes": [
          {
             "Sarg": {
-               "id": "http://rdfh.ch/lists/0805/EpJisIj2TaWu9vRoYMpw7w"
+               "id": "http://rdfh.ch/lists/0805/39CWh7GTQLiVdESUPhgEvA"
             }
          },
          {
             "Gef\u00e4ssfragment": {
-               "id": "http://rdfh.ch/lists/0805/cdH9HEgsSOuk1pZayzL_tg"
+               "id": "http://rdfh.ch/lists/0805/LHS3LFQ7S42JejDfT25ifA"
             }
          },
          {
             "Gef\u00e4ssverschluss": {
-               "id": "http://rdfh.ch/lists/0805/Y3htZS7RQRKk72Mt6SboWA"
+               "id": "http://rdfh.ch/lists/0805/_BUtBQrERQyR1y5ewUegVQ"
             }
          },
          {
             "Gef\u00e4ssaufschrift": {
-               "id": "http://rdfh.ch/lists/0805/CclYe6sbTgGTe-mificgoQ"
+               "id": "http://rdfh.ch/lists/0805/dhX0LjGgTGirZG20MpkH_g"
             }
          },
          {
             "Ostrakon": {
-               "id": "http://rdfh.ch/lists/0805/_N2FtNxiTPiaAbBnjJyTcA"
+               "id": "http://rdfh.ch/lists/0805/6qLgFehSTkW27c0pcknMbg"
             }
          },
          {
             "Siegel": {
-               "id": "http://rdfh.ch/lists/0805/UXICfZK5Tka_hqGZ3du7HA"
+               "id": "http://rdfh.ch/lists/0805/4nlJ1cMLQR6bMhu04Y-pCA"
             }
          },
          {
             "Stempel": {
-               "id": "http://rdfh.ch/lists/0805/22OUhPx9TqSIddbYQZO8zw"
+               "id": "http://rdfh.ch/lists/0805/wUkbB6TERe-J6gp6pTGDUw"
             }
          },
          {
             "Figur": {
-               "id": "http://rdfh.ch/lists/0805/RFfhdDqsR66L6mEDXKxEhg"
+               "id": "http://rdfh.ch/lists/0805/NHs3cEVLRCy5PPBz6cPeKQ"
             }
          },
          {
             "M\u00f6bel": {
-               "id": "http://rdfh.ch/lists/0805/tc8rxJveSle_1B3NY5pvBA"
+               "id": "http://rdfh.ch/lists/0805/eTctD932SyGRac52BHopAA"
             }
          },
          {
             "Mumie": {
-               "id": "http://rdfh.ch/lists/0805/yDlkaSCcQCm3rnRIGgzboA"
+               "id": "http://rdfh.ch/lists/0805/YwKbXThUTf-q6_TNRxXfGg"
             }
          },
          {
             "Werkzeug": {
-               "id": "http://rdfh.ch/lists/0805/Vltp07pVTHiMTP4N7vRVaA"
+               "id": "http://rdfh.ch/lists/0805/oTKI4sOfSuu7eTdLK23QIw"
             }
          },
          {
             "Textilien": {
-               "id": "http://rdfh.ch/lists/0805/CyU1Mi_vSUyDswgRbMq65Q"
+               "id": "http://rdfh.ch/lists/0805/xr0NhkESRbmMJZipck3Oxw"
             }
          },
          {
             "Leder": {
-               "id": "http://rdfh.ch/lists/0805/rM5BFguZRRmQrpZgdQuZfw"
+               "id": "http://rdfh.ch/lists/0805/LA0186XiRzm5034AgNvB8A"
             }
          },
          {
             "Modern": {
-               "id": "http://rdfh.ch/lists/0805/q5ysCJfwSNOcrqOvOOkJIw"
+               "id": "http://rdfh.ch/lists/0805/ARZtpfFfTxWiyWrVYblKkg"
             }
          },
          {
             "Gef\u00e4ss": {
-               "id": "http://rdfh.ch/lists/0805/d8qVuQ_JQcGJEOYdiMXgaw"
+               "id": "http://rdfh.ch/lists/0805/KfjDNF3EQ4GvkocsFLywaw"
             }
          },
          {
             "Schmuck": {
-               "id": "http://rdfh.ch/lists/0805/gKM9NwShQPmQSnWaU1vZFA"
+               "id": "http://rdfh.ch/lists/0805/2tmwZlkTTZaOXC5JbhYLwA"
             }
          },
          {
             "Kanope": {
-               "id": "http://rdfh.ch/lists/0805/ftlCkqdvQTuMgvDerODJaA"
+               "id": "http://rdfh.ch/lists/0805/OU7ErDlmRail5A4uigS2cQ"
             }
          },
          {
             "Nagel": {
-               "id": "http://rdfh.ch/lists/0805/lf52JGwfRkm7P1qhgMzT0A"
+               "id": "http://rdfh.ch/lists/0805/uEgEPEKxQ9-vutFNyXlQOA"
             }
          },
          {
             "Opferplatte": {
-               "id": "http://rdfh.ch/lists/0805/JMlRsuD6RT-0A4yO-mVwyQ"
+               "id": "http://rdfh.ch/lists/0805/Rr_T2iVVRoWwDsO6NVGGTw"
             }
          },
          {
             "Stele": {
-               "id": "http://rdfh.ch/lists/0805/ZavzKeueQ1K_DmwDJJslBg"
+               "id": "http://rdfh.ch/lists/0805/qOoHHWeUR9C1FLFLkjZIAg"
             }
          },
          {
             "Modell": {
-               "id": "http://rdfh.ch/lists/0805/NVPtQd6bSWOYXHKL1Rk7Qw"
+               "id": "http://rdfh.ch/lists/0805/kuwBzm3OTHyQCrePn7IRXQ"
             }
          },
          {
             "Gef\u00e4ssEinlage": {
-               "id": "http://rdfh.ch/lists/0805/xkGSpeHBR1Gv1k95wMFYSw"
+               "id": "http://rdfh.ch/lists/0805/1O-xDRSfRmmG9XXWOyuawQ"
             }
          },
          {
             "Label": {
-               "id": "http://rdfh.ch/lists/0805/jVZLBJd9TcGG8cUIx3MazA"
+               "id": "http://rdfh.ch/lists/0805/BW2J6_EwT469dXpyHzi2lQ"
             }
          },
          {
             "Abdruckobjekt": {
-               "id": "http://rdfh.ch/lists/0805/MPZs1it5S2OCBNYapmJyvw"
+               "id": "http://rdfh.ch/lists/0805/HfJ0ZaFVRQGgO8gt_pGPvw"
             }
          },
          {
             "Maske": {
-               "id": "http://rdfh.ch/lists/0805/SIy9rVjDQXShW27opIYdAw"
+               "id": "http://rdfh.ch/lists/0805/xz7oHd05QH68ZQkikSl3IQ"
             }
          }
       ]
    },
    "ObjekttypZusatz": {
-      "id": "http://rdfh.ch/lists/0805/G1Jc23HvQBuPZNqQJf97_g",
+      "id": "http://rdfh.ch/lists/0805/w80uB5zVSHaJkhBMdeNnTA",
       "nodes": [
          {
             "Fragment": {
-               "id": "http://rdfh.ch/lists/0805/X7P0eF7ZQu6VbhG96qgNag"
+               "id": "http://rdfh.ch/lists/0805/SauK7ZuSRZC_K6OMTmTiSg"
             }
          },
          {
             "Mumienbinden": {
-               "id": "http://rdfh.ch/lists/0805/_gaU05MeQWizEn7JF0oUfw"
+               "id": "http://rdfh.ch/lists/0805/9STU8M6tQ-mEcEw1jrcdpQ"
             }
          },
          {
             "Natronsack": {
-               "id": "http://rdfh.ch/lists/0805/QYTwnE1kTGqEypneIv9Bqw"
+               "id": "http://rdfh.ch/lists/0805/AqY3gEvAQR6d7M84uJT7Kw"
             }
          },
          {
             "Einlage": {
-               "id": "http://rdfh.ch/lists/0805/Pjo7k-r_TMi5AtCjusP4nw"
+               "id": "http://rdfh.ch/lists/0805/FO8L7PNpRyuJz3tCsdBvPg"
             }
          },
          {
             "Siegelabdruck": {
-               "id": "http://rdfh.ch/lists/0805/t3_c5Rk7QZCZcMgXSJIq-A"
+               "id": "http://rdfh.ch/lists/0805/jDxE_TkTQT6bFLsrvqwlcA"
             }
          },
          {
             "Amulett": {
-               "id": "http://rdfh.ch/lists/0805/zP_i-PNCRJug7_fi3TI8aw"
+               "id": "http://rdfh.ch/lists/0805/rVGwezkQR5Cdh-7HlEMknQ"
             }
          },
          {
             "Uschebti": {
-               "id": "http://rdfh.ch/lists/0805/elUy_W_FSFiejH-TrDVDGA"
+               "id": "http://rdfh.ch/lists/0805/jw0E4_ZiQ5-VletTT3hVXQ"
             }
          },
          {
             "Statuette": {
-               "id": "http://rdfh.ch/lists/0805/H54MWwqdTDezlNlDyACikQ"
+               "id": "http://rdfh.ch/lists/0805/P24H_LgURj2csFOuCcKwNg"
             }
          },
          {
             "Perle": {
-               "id": "http://rdfh.ch/lists/0805/DOZUdGp7QoOIkM6H9f9-8A"
+               "id": "http://rdfh.ch/lists/0805/klu3SBi_TleFqNDcR-nzBQ"
             }
          },
          {
             "Skarab\u00e4us": {
-               "id": "http://rdfh.ch/lists/0805/h0AcIxfARY-wyVSYmBYPiA"
+               "id": "http://rdfh.ch/lists/0805/LLXPROtnTdejdbCaezUIGQ"
             }
          },
          {
             "Deckel": {
-               "id": "http://rdfh.ch/lists/0805/8d_Ov1CoR_mGbqRpA8aHDg"
+               "id": "http://rdfh.ch/lists/0805/oLY7uZrzR22ZFH5lCaTJvw"
             }
          },
          {
             "Ring": {
-               "id": "http://rdfh.ch/lists/0805/YAdhHx5JT2WJhlC3OACo3A"
+               "id": "http://rdfh.ch/lists/0805/yUJbVnMhShqMED7cq5PMrA"
             }
          },
          {
             "Armreif": {
-               "id": "http://rdfh.ch/lists/0805/_toocwWrS0Se8gl7OmLraw"
+               "id": "http://rdfh.ch/lists/0805/Yk4sGg57RPW0Ayp3CFXbcw"
             }
          },
          {
             "Kohlstab": {
-               "id": "http://rdfh.ch/lists/0805/rUOQwKyHQjKx1mNbcOKKGw"
+               "id": "http://rdfh.ch/lists/0805/3gL_UehJS2WF6Gl6MfHVGQ"
             }
          },
          {
             "Aufsteckelement": {
-               "id": "http://rdfh.ch/lists/0805/KN3y981kT7-Q_Oi2b6IvCg"
+               "id": "http://rdfh.ch/lists/0805/IXmUZh3EQSC6ZdZS50RrOg"
             }
          }
       ]
