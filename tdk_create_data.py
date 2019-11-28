@@ -1,7 +1,7 @@
 import csv
 from pprint import pprint
 import os
-import re
+import requests
 from knora import Knora, Sipi
 server = "http://0.0.0.0:3333"
 #user = "root@example.com"
@@ -102,6 +102,7 @@ class tdk_create_data:
 
     def create_bild(self, bild_file):
         listsep = '/'
+        bild_dir = "E:\191119\ubkvp-DaSCH\03-Metadaten\01-Bilder\03-Dateien" #TODO adapt this to mac
         with open(bild_file, encoding='utf-8') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=';', quotechar='"')
             null = next(csvreader)
@@ -114,32 +115,50 @@ class tdk_create_data:
                         json = {}
                     if not line[0] == "":
                         json["bildDateiname"] = line[0]
-                    #if not line[2] == "":
-                            #json["bildLage"] = line[2]  #TODO
+                    if not line[1] == "":
+                            json["bildGrab"] = line[1]
+                    if not line[2] == "":
+                        json["bildUmgebung"] = line[2]
+                    if not line[5] == "":
+                        json["bildAreal"] = line[5]
+                    if not line[6] == "":
+                        json["bildRaum"] = line[6]
+                    if not line[8] == "":
+                        json["bildSchnitt"] = line[8]
                     if not line[3] == "":
-                        json["bildKampagne"] = line[3] #TODO
+                        pass
+                       # json["bildKampagne"] = line[3] TODO
                     if not line[4] == "":
                         json["bildDatum"] = self.getDate(line[4])
-                    if not line[5] == "":
+                    if not line[7] == "":
                         json["bildAbhub"] = line[7]
-                    if not line[6] == "":
-                        json["bildGefaessNr"] = line[6]
-                    if not line[6] == "":
-                        json["bildMaskenNr"] = line[6]
-                    if not line[6] == "":
-                        json["bildKartonageNr"] = line[6]
-                    if not line[6] == "":
-                        json["bildAnthropologieNr"] = line[6]
-                    if not line[6] == "":
-                        json["bildAutor"] = line[6]
+                    if not line[8] == "":
+                        json["bildPosition"] = line[8]
+                    if not (line[9] == "" or line[10] ==""):
+                        pass
+                     #  json["bildSMFund"] = line[0] TODO
 
+                    if not line[11] == "":
+                        json["bildGefaessNr"] = line[11] #TODO
+                    if not line[12] == "":
+                        json["bildMaskenNr"] = line[12]
+                    if not line[13] == "":
+                        json["bildKartonageNr"] = line[13]
+                    if not line[14] == "":
+                        json["bildAnthropologieNr"] = line[14]
+                    if not line[15] == "":
+                        json["bildBemerkung"] = line[15]
+                    if not line[16] == "":
+                        json["bildAutor"] = line[16]
 
-                self.bild_store[line[0]] = con.create_resource(schema, "Kampagne", "KAMPAGNE_" + str(line[0]),
-                                                              {"kampagne": line[0], "kampagneStartDatum": line[1],
-                                                               "kampagneEndDatum": line[2],
-                                                               "kampagneTeilnehmer": line[3], "kampagneGrab": line[4],
-                                                               "kampagneUmgebung": line[5],
-                                                               "kampagneBemerkung": line[6]})['iri']
+                    if not line[0] == "":
+                        or_file = bild_dir +line[4] + ".jpg"
+                        res = sipi.upload_image(or_file)
+                        pprint(res)
+                        file = res['uploadedFiles'][0]['internalFilename']
+
+                self.bild_store[line[0]] = con.create_resource(schema, "Bild", "BILD_" + str(line[0]),
+                                                              json,file)['iri']
 
 
     def create_zeichnungen(self, zeichnung_file):
@@ -332,6 +351,13 @@ class tdk_create_data:
         rel_path = subdirectory + "/" + str
         return os.path.join(script_dir,rel_path)
 
+    def search_for_resource_by_prop(self, resource, prop, value):
+        token = con.get_token()
+        url = server + "/v2/resources"
+        req = requests.get(url,
+                           headers={'Authorization': 'Bearer ' + token})
+        pprint(req)
+
     def get_listnode(self, str, l):
         if isinstance(str, list):
             output =[]
@@ -348,7 +374,7 @@ class tdk_create_data:
             if str == "Einlage":
                 str = "Gefäss Einlage"
             if str == "Abdruck":
-                str == "Abdruckobjekt"
+                str = "Abdruckobjekt"
         if l == "MaterialZusatz" and str == "Alabaster":
             str = "ägyptischer Alabaster"
         str = l + ":" + str[0].capitalize() + str[1:]
@@ -357,27 +383,28 @@ class tdk_create_data:
 
 
 c = tdk_create_data()
-c.create_lage(lage_file)
-pprint("_______________________________________")
-pprint("Done with LAGE")
-pprint("_______________________________________")
-c.create_kampagne(kampagne_file)
-pprint("_______________________________________")
-pprint("Done with KAMPAGNE")
-pprint("_______________________________________")
-c.create_zeichnungen(zeichnung_file)
-pprint("_______________________________________")
-pprint("Done with ZEICHNUNG")
-pprint("_______________________________________")
-#c.create_publikation(pub_file)
-pprint("_______________________________________")
-pprint("Done with PUBLIKATION")
-pprint("_______________________________________")
-#c.create_smfund(smfund_file)
-pprint("_______________________________________")
-pprint("Done with SMFUND")
-pprint("_______________________________________")
-c.create_bild(bild_file)
-pprint("_______________________________________")
-pprint("Done with BILD")
-pprint("_______________________________________")
+# c.create_lage(lage_file)
+# pprint("_______________________________________")
+# pprint("Done with LAGE")
+# pprint("_______________________________________")
+# c.create_kampagne(kampagne_file)
+# pprint("_______________________________________")
+# pprint("Done with KAMPAGNE")
+# pprint("_______________________________________")
+# c.create_zeichnungen(zeichnung_file)
+# pprint("_______________________________________")
+# pprint("Done with ZEICHNUNG")
+# pprint("_______________________________________")
+# #c.create_publikation(pub_file)
+# pprint("_______________________________________")
+# pprint("Done with PUBLIKATION")
+# pprint("_______________________________________")
+# #c.create_smfund(smfund_file)
+# pprint("_______________________________________")
+# pprint("Done with SMFUND")
+# pprint("_______________________________________")
+# c.create_bild(bild_file)
+# pprint("_______________________________________")
+# pprint("Done with BILD")
+# pprint("_______________________________________")
+c.search_for_resource_by_prop("","","")
