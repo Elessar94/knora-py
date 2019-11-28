@@ -1,0 +1,32 @@
+@prefix knora-base: <http://www.knora.org/ontology/knora-base#> .
+@prefix knora-admin: <http://www.knora.org/ontology/knora-admin#> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix standoff: <http://www.knora.org/ontology/standoff#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix salsah-gui: <http://www.knora.org/ontology/salsah-gui#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tdk: <http://www.knora.org/ontology/0805/tdk#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix luc: <http://www.ontotext.com/owlim/lucene#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<http://www.knora.org/data/admin> {
+
+    <http://rdfh.ch/users/tdk-0805-import-user> rdf:type knora-admin:User ;
+            knora-admin:username "tdk0805import"^^xsd:string ;
+            knora-admin:email "tdk0805import@example.com"^^xsd:string ;
+            knora-admin:givenName "TDK0805"^^xsd:string ;
+            knora-admin:familyName "Import User"^^xsd:string ;
+            knora-admin:password "$2a$12$7XEBehimXN1rbhmVgQsyve08.vtDmKK7VMin4AdgCEtE4DWgfQbTK"^^xsd:string ;
+            knora-admin:preferredLanguage "de"^^xsd:string ;
+            knora-admin:status "true"^^xsd:boolean ;
+            knora-admin:isInProject <http://rdfh.ch/projects/0805> ;
+            knora-admin:isInSystemAdminGroup "false"^^xsd:boolean ;
+            knora-admin:isInProjectAdminGroup <http://rdfh.ch/projects/0805> .
+}
