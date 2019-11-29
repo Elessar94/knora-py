@@ -126,8 +126,19 @@ class tdk_create_data:
                     if not line[8] == "":
                         json["bildSchnitt"] = line[8]
                     if not line[3] == "":
-                        pass
-                       # json["bildKampagne"] = line[3] TODO
+                        line[3] = line[3][0:3] #get year of the line
+                        if line[3] == "2014":
+                            line[3] = "2013-2014"
+                        if line[3] == "2015":
+                            line[3] = "2014-2015"
+                        if line[3] == "2016":
+                            line[3] = "2015-2016"
+                        if line[3] == "2017":
+                            line[3] = "2016-2017"
+                        if line[3] == "2018":
+                            line[3] = "2017-2018"
+
+                        json["bildKampagne"] = con.get_resource_by_label("KAMPAGNE_" + str(line[3]), server + "ontology/0805/tdk/v2#Kampagne")["iri"]
                     if not line[4] == "":
                         json["bildDatum"] = self.getDate(line[4])
                     if not line[7] == "":
@@ -151,14 +162,14 @@ class tdk_create_data:
                     if not line[16] == "":
                         json["bildAutor"] = line[16]
 
-                    if not line[0] == "":
-                        or_file = bild_dir +line[4] + ".jpg"
-                        res = sipi.upload_image(or_file)
-                        pprint(res)
-                        file = res['uploadedFiles'][0]['internalFilename']
-
-                self.bild_store[line[0]] = con.create_resource(schema, "Bild", "BILD_" + str(line[0]),
-                                                              json,file)['iri']
+                    # if not line[0] == "":
+                    #     or_file = bild_dir +line[4] + ".jpg"
+                    #     res = sipi.upload_image(or_file)
+                    #     pprint(res)
+                    #     file = res['uploadedFiles'][0]['internalFilename']
+            pprint(json)
+             #   self.bild_store[line[0]] = con.create_resource(schema, "Bild", "BILD_" + str(line[0]),
+             #                                                 json,file)['iri']
 
 
     def create_zeichnungen(self, zeichnung_file):
