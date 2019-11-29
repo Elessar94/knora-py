@@ -845,6 +845,31 @@ class Knora:
         self.on_api_error(req)
         return req.json()
 
+    def get_resource_by_label(self,
+                              label: str,
+                              res_class: Optional[str] = None,
+                              limit_to_project: Optional[str] = None,
+                              offset: Optional[int] = None):
+        url = self.server + "/v2/searchbylabel/" + label
+        option = False
+        if res_class is not None:
+            url += '?limitToResourceClass=' + quote_plus(res_class)
+            option = True
+        if limit_to_project is not None:
+            if option:
+                url += '&limitToProject=' + quote_plus(limit_to_project)
+            else:
+                url += '?limitToProject=' + quote_plus(limit_to_project)
+            option = True;
+        if offset is not None:
+            if option:
+                url += '&offset=' + quote_plus(limit_to_project)
+            else:
+                url += '&offset=' + quote_plus(limit_to_project)
+        req = requests.get(url, headers={'Authorization': 'Bearer ' + self.token})
+        self.on_api_error(req)
+        return req.json()
+
     def create_resource(self, schema: Dict, res_class: str, label: str, values: Dict, stillimage = None):
         """
         This method creates a new resource (instance of a resource class) with the

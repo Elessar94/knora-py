@@ -102,7 +102,7 @@ class tdk_create_data:
 
     def create_bild(self, bild_file):
         listsep = '/'
-        bild_dir = "E:\191119\ubkvp-DaSCH\03-Metadaten\01-Bilder\03-Dateien" #TODO adapt this to mac
+        bild_dir = "" #TODO
         with open(bild_file, encoding='utf-8') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=';', quotechar='"')
             null = next(csvreader)
@@ -351,12 +351,6 @@ class tdk_create_data:
         rel_path = subdirectory + "/" + str
         return os.path.join(script_dir,rel_path)
 
-    def search_for_resource_by_prop(self, resource, prop, value):
-        token = con.get_token()
-        url = server + "/v2/resources"
-        req = requests.get(url,
-                           headers={'Authorization': 'Bearer ' + token})
-        pprint(req)
 
     def get_listnode(self, str, l):
         if isinstance(str, list):
