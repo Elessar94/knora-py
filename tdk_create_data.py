@@ -103,12 +103,13 @@ class tdk_create_data:
     def create_bild(self, bild_file):
         listsep = '/'
         bild_dir = "" #TODO
-        with open(bild_file, encoding='utf-8') as csvfile:
+        json = {}
+        with open(self.get_file(bild_file), encoding='utf-8') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=';', quotechar='"')
             null = next(csvreader)
+            count = 0
             for line in csvreader:
-                line[1] = self.getDate(line[1])
-                line[2] = self.getDate(line[2])
+
                 for i in range(len(line)):
                     if line[i].find(listsep) != -1:
                         line[i] = line[i].split(listsep)
@@ -126,7 +127,7 @@ class tdk_create_data:
                     if not line[8] == "":
                         json["bildSchnitt"] = line[8]
                     if not line[3] == "":
-                        line[3] = line[3][0:3] #get year of the line
+                        line[3] = line[3][0:4] #get year of the line
                         if line[3] == "2014":
                             line[3] = "2013-2014"
                         if line[3] == "2015":
@@ -138,8 +139,13 @@ class tdk_create_data:
                         if line[3] == "2018":
                             line[3] = "2017-2018"
 
-                        json["bildKampagne"] = con.get_resource_by_label("KAMPAGNE_" + str(line[3]), server + "ontology/0805/tdk/v2#Kampagne")["iri"]
+                        kamp_string = "KAMPAGNE_" + str(line[3])
+                        resource_iri = server + "/ontology/0805/tdk/v2#Kampagne"
+                        pprint(kamp_string)
+                        pprint(resource_iri)
+                        json["bildKampagne"] = con.get_resource_by_label(kamp_string)["@id"]
                     if not line[4] == "":
+                        pprint(line[4])
                         json["bildDatum"] = self.getDate(line[4])
                     if not line[7] == "":
                         json["bildAbhub"] = line[7]
@@ -150,7 +156,7 @@ class tdk_create_data:
                      #  json["bildSMFund"] = line[0] TODO
 
                     if not line[11] == "":
-                        json["bildGefaessNr"] = line[11] #TODO
+                        json["bildGefaessNr"] = line[11]
                     if not line[12] == "":
                         json["bildMaskenNr"] = line[12]
                     if not line[13] == "":
@@ -167,7 +173,7 @@ class tdk_create_data:
                     #     res = sipi.upload_image(or_file)
                     #     pprint(res)
                     #     file = res['uploadedFiles'][0]['internalFilename']
-            pprint(json)
+                    pprint(json)
              #   self.bild_store[line[0]] = con.create_resource(schema, "Bild", "BILD_" + str(line[0]),
              #                                                 json,file)['iri']
 
