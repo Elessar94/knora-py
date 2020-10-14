@@ -1,0 +1,2088 @@
+{
+  "project": {
+    "shortcode": "0827",
+    "shortname": "POU",
+    "longname": "Portraits of Unbelonging",
+    "descriptions": {
+      "en": "The Portraits of Unbelonging project"
+    },
+    "keywords": [
+      "Photography",
+      "Migration",
+      "Border control",
+      "Surveillance",
+      "Ottoman",
+      "Armenian",
+      "United states",
+      "Immigration",
+      "Nationality"
+    ],
+    "lists": [
+      {
+        "name": "gender",
+        "labels": {
+          "en": "Gender"
+        },
+        "nodes": [
+          {
+            "name": "male",
+            "labels": {
+              "en": "Male"
+            }
+          },
+          {
+            "name": "female",
+            "labels": {
+              "en": "Female"
+            }
+          }
+        ]
+      },
+      {
+        "name": "relation",
+        "labels": {
+          "en": "Relationships"
+        },
+        "nodes": [
+          {
+            "name": "daughter-in-law",
+            "labels": {
+              "en": "Daughter-in-law"
+            }
+          },
+          {
+            "name": "son-in-law",
+            "labels": {
+              "en": "Son-in-law"
+            }
+          },
+          {
+            "name": "grandchild",
+            "labels": {
+              "en": "Grandchild"
+            }
+          },
+          {
+            "name": "brother-in-law",
+            "labels": {
+              "en": "Brother-in-law"
+            }
+          },
+          {
+            "name": "sister-in-law",
+            "labels": {
+              "en": "Sister-in-law"
+            }
+          },
+          {
+            "name": "sister-in-law's-son",
+            "labels": {
+              "en": "Sister-in-law's son"
+            }
+          },
+          {
+            "name": "paternal-uncle's-son",
+            "labels": {
+              "en": "Paternal Uncle's son"
+            }
+          },
+          {
+            "name": "paternal-uncle",
+            "labels": {
+              "en": "Paternal uncle"
+            }
+          },
+          {
+            "name": "wife's-sister",
+            "labels": {
+              "en": "Wife's sister"
+            }
+          },
+          {
+            "name": "maternal-uncle's-son",
+            "labels": {
+              "en": "Maternal uncle's son"
+            }
+          },
+          {
+            "name": "husband's-sister",
+            "labels": {
+              "en": "Husband's sister"
+            }
+          },
+          {
+            "name": "paternal-aunt",
+            "labels": {
+              "en": "Paternal aunt"
+            }
+          },
+          {
+            "name": "brother-in-law's-son",
+            "labels": {
+              "en": "Brother-in-law's son"
+            }
+          },
+          {
+            "name": "brother-in-law's-daughter",
+            "labels": {
+              "en": "Brother-in-law's daughter"
+            }
+          },
+          {
+            "name": "husband-or-wife's-brother",
+            "labels": {
+              "en": "Husband or wife's brother"
+            }
+          },
+          {
+            "name": "brother",
+            "labels": {
+              "en": "Brother"
+            }
+          },
+          {
+            "name": "brother's-child",
+            "labels": {
+              "en": "Brother's child"
+            }
+          },
+          {
+            "name": "brother's-wife",
+            "labels": {
+              "en": "Brother's wife"
+            }
+          },
+          {
+            "name": "grandson",
+            "labels": {
+              "en": "Grandson"
+            }
+          },
+          {
+            "name": "granddaughter",
+            "labels": {
+              "en": "Granddaughter"
+            }
+          },
+          {
+            "name": "sister",
+            "labels": {
+              "en": "Sister"
+            }
+          },
+          {
+            "name": "sibling",
+            "labels": {
+              "en": "Sibling"
+            }
+          },
+          {
+            "name": "mother-in-law",
+            "labels": {
+              "en": "Mother-in-law"
+            }
+          },
+          {
+            "name": "daughter",
+            "labels": {
+              "en": "Daughter"
+            }
+          },
+          {
+            "name": "mother",
+            "labels": {
+              "en": "Mother"
+            }
+          },
+          {
+            "name": "son",
+            "labels": {
+              "en": "Son"
+            }
+          },
+          {
+            "name": "self",
+            "labels": {
+              "en": "Self"
+            }
+          },
+          {
+            "name": "intended",
+            "labels": {
+              "en": "Intended"
+            }
+          },
+          {
+            "name": "father",
+            "labels": {
+              "en": "Father"
+            }
+          },
+          {
+            "name": "stepmother",
+            "labels": {
+              "en": "Stepmother"
+            }
+          },
+
+          {
+            "name": "child",
+            "labels": {
+              "en": "Child"
+            }
+          },
+          {
+            "name": "niece",
+            "labels": {
+              "en": "Niece"
+            }
+          },
+          {
+            "name": "nephew",
+            "labels": {
+              "en": "Nephew"
+            }
+          },
+          {
+            "name": "husband",
+            "labels": {
+              "en": "Husband"
+            }
+          },
+          {
+            "name": "wife",
+            "labels": {
+              "en": "Wife"
+            }
+          },
+          {
+            "name": "spouse",
+            "labels": {
+              "en": "Spouse"
+            }
+          },
+          {
+            "name": "wife's-brother",
+            "labels": {
+              "en": "Wife's brother"
+            }
+          },
+          {
+            "name": "employer",
+            "labels": {
+              "en": "Employer"
+            }
+          },
+          {
+            "name": "employee",
+            "labels": {
+              "en": "Employee"
+            }
+          },
+          {
+            "name": "non-biological-child",
+            "labels": {
+              "en": "Non-biological Child"
+            }
+          },
+          {
+            "name": "fiancee",
+            "labels": {
+              "en": "Fiancee"
+            }
+          },
+          {
+            "name": "protection",
+            "labels": {
+              "en": "One who is under the protection of/in the service of"
+            }
+          },
+
+          {
+            "name": "spouses-brother",
+            "labels": {
+              "en": "Spouses Brother"
+            }
+          },
+          {
+            "name": "child-of-sibling",
+            "labels": {
+              "en": "Child of Sibling"
+            }
+          },
+          {
+            "name": "non-biological-daughter",
+            "labels": {
+              "en": "Non-biological Daughter"
+            }
+          },
+          {
+            "name": "brother's-daughter",
+            "labels": {
+              "en": "Brother's Daughter"
+            }
+          },
+          {
+            "name": "maid-domestic",
+            "labels": {
+              "en": "Maid, domestic"
+            }
+          },
+          {
+            "name": "brother's-son",
+            "labels": {
+              "en": "Brother's Son"
+            }
+          },
+          {
+            "name": "grandmother",
+            "labels": {
+              "en": "Grandmother"
+            }
+          },
+          {
+            "name": "non-biological-son",
+            "labels": {
+              "en": "Non-biological Son"
+            }
+          },
+          {
+            "name": "sister's-child",
+            "labels": {
+              "en": "Sister's child"
+            }
+          },
+          {
+            "name": "relative",
+            "labels": {
+              "en": "Relative"
+            }
+          },
+          {
+            "name": "step-paternal-uncle",
+            "labels": {
+              "en": "Step Paternal Uncle"
+            }
+          },
+          {
+            "name": "self-and-family",
+            "labels": {
+              "en": "Self and Family "
+            }
+          }
+        ]
+      }
+    ],
+    "ontology": {
+      "name": "pou",
+      "label": "Portraits of Unbelonging Ontology",
+      "resources": [
+        {
+          "name": "Person",
+          "super": "Resource",
+          "labels": {
+            "en": "Person"
+          },
+          "properties": [
+            {
+              "name": "presentInPic",
+              "super": [
+                "hasValue"
+              ],
+              "object": "BooleanValue",
+              "labels": {
+                "en": "Present in Photograph"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "nameOfPerson",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:SourcedText",
+              "labels": {
+                "en": "Name"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "lastName",
+              "super": [
+                "hasValue"
+              ],
+              "object": "TextValue",
+              "labels": {
+                "en": "Last Name"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "husbandsName",
+              "super": [
+                "hasValue"
+              ],
+              "object": "TextValue",
+              "labels": {
+                "en": "Husband's Name"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "gender",
+              "object": "ListValue",
+              "labels": {
+                "en": "Gender"
+              },
+              "gui_element": "Pulldown",
+              "gui_attributes": [
+                "hlist=gender"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "grandfathersName",
+              "super": [
+                "hasValue"
+              ],
+              "object": "TextValue",
+              "labels": {
+                "en": "Grandfather's Name"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "fathersName",
+              "super": [
+                "hasValue"
+              ],
+              "object": "TextValue",
+              "labels": {
+                "en": "Father's Name"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "relToAnchorperson",
+              "object": "ListValue",
+              "labels": {
+                "en": "Relation to Anchorperson"
+              },
+              "gui_element": "Pulldown",
+              "gui_attributes": [
+                "hlist=relation"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "originalRelation",
+              "super": [
+                "hasValue"
+              ],
+              "object": "TextValue",
+              "labels": {
+                "en": "Original Relation that didn't fit in Anchorperson format"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "turkishName",
+              "super": [
+                "hasValue"
+              ],
+              "object": "TextValue",
+              "labels": {
+                "en": "Turkish Last Name"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "originTown",
+              "super": [
+                "hasValue"
+              ],
+              "object": "TextValue",
+              "labels": {
+                "en": "Origin Town"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "originKaza",
+              "super": [
+                "hasValue"
+              ],
+              "object": "TextValue",
+              "labels": {
+                "en": "Origin Kaza"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "originKarye",
+              "super": [
+                "hasValue"
+              ],
+              "object": "TextValue",
+              "labels": {
+                "en": "Origin Karye"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "originMahalle",
+              "super": [
+                "hasValue"
+              ],
+              "object": "TextValue",
+              "labels": {
+                "en": "Origin Mahalle"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "house",
+              "super": [
+                "hasValue"
+              ],
+              "object": "TextValue",
+              "labels": {
+                "en": "House"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "destinationCity",
+              "super": [
+                "hasValue"
+              ],
+              "object": "TextValue",
+              "labels": {
+                "en": "Destination City"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "destinationCountry",
+              "super": [
+                "hasValue"
+              ],
+              "object": "TextValue",
+              "labels": {
+                "en": "Destination Country"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "roi",
+              "super": [
+                "hasValue"
+              ],
+              "object": "TextValue",
+              "labels": {
+                "en": "Range of Interest"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "dateOfBirth",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:SourcedDate",
+              "labels": {
+                "en": "Date of Birth"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "dateOfDeath",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:SourcedDate",
+              "labels": {
+                "en": "Date of Death"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "placeOfBirth",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:SourcedText",
+              "labels": {
+                "en": "Place of Birth"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "placeOfDeath",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:SourcedText",
+              "labels": {
+                "en": "Place of Death"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "dateOfDeparture",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:SourcedDate",
+              "labels": {
+                "en": "Date of Departure"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "dateOfArrival",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:SourcedDate",
+              "labels": {
+                "en": "Date of Arrival"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "portOfDeparture",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:SourcedText",
+              "labels": {
+                "en": "Port of Departure"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "portOfArrival",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:SourcedText",
+              "labels": {
+                "en": "Port of Arrival"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "lastResidence",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:SourcedText",
+              "labels": {
+                "en": "Last place of residence"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "finalDestination",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:SourcedText",
+              "labels": {
+                "en": "Final Destination"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "beforeInUS",
+              "super": [
+                "hasValue"
+              ],
+              "object": "BooleanValue",
+              "labels": {
+                "en": "Whether ever before in US"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "closestRelative",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:RelatedPhotographs",
+              "labels": {
+                "en": "Closest Relative or friend in place of origin"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "sourceClosestRelative",
+              "super": [
+                "hasValue"
+              ],
+              "object": "TextValue",
+              "labels": {
+                "en": "Source of closest Relative or friend in place of origin"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "joiningUS",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:RelatedPhotographs",
+              "labels": {
+                "en": "Person joining in the US"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "addressUS",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:SourcedText",
+              "labels": {
+                "en": "Address joining in the US"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "reasonDetainment",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:SourcedText",
+              "labels": {
+                "en": "Reason for Detainment"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "dateOfAdmission",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:SourcedDate",
+              "labels": {
+                "en": "Date of Admission"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "dateOfDeclaration",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:SourcedDate",
+              "labels": {
+                "en": "Date of Declaration"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "dateOfPetition",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:SourcedDate",
+              "labels": {
+                "en": "Date of Petetion"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "naturalizationPhoto",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:SourcedText",
+              "labels": {
+                "en": "Naturalization Photo"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "topLetter",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:PersonFile",
+              "labels": {
+                "en": "Top Letter"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "otherFiles",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:PersonFile",
+              "labels": {
+                "en": "Other Files"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "toWhomHRFile",
+              "object": "TextValue",
+              "labels": {
+                "en": "To Whom was teh HR file sent?"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "dateHRFile",
+              "object": "DateValue",
+              "labels": {
+                "en": "Date of HR File"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "dateNationalityDesk",
+              "object": "DateValue",
+              "labels": {
+                "en": "Date the document was sent to Nationality Desk?"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "dateNationalityBureau",
+              "object": "DateValue",
+              "labels": {
+                "en": "Date the document was sent to Nationality Bureau?"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "dateMinistryForeign",
+              "object": "DateValue",
+              "labels": {
+                "en": "Date the document was sent to the Ministry of Foreign Affairs"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "dateOttomanConsulate",
+              "object": "DateValue",
+              "labels": {
+                "en": "Date the document was sent to the Ottoman Consulate?"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "dateRussianConsulate",
+              "object": "DateValue",
+              "labels": {
+                "en": "Date the document was sent to Russian Consulate?"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "detailsHRFile",
+              "object": "TextValue",
+              "labels": {
+                "en": "Relevant details in the HR document"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            }
+          ]
+        },
+        {
+          "name": "Photograph",
+          "super": "Resource",
+          "labels": {
+            "en": "Photograph"
+          },
+          "properties": [
+            {
+              "name": "physicalCopy",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:PhysicalCopy",
+              "labels": {
+                "en": "Physical Copy"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "peopleOnPic",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:Person",
+              "labels": {
+                "en": "People on Picture"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "anchorPerson",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:Person",
+              "labels": {
+                "en": "Anchor Person"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "1"
+            },
+            {
+              "name": "dateOfPassport",
+              "object": "DateValue",
+              "labels": {
+                "en": "Date of Passport"
+              },
+              "gui_element": "Date",
+              "gui_attributes": [],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "passportInfoCelib",
+              "object": "TextValue",
+              "labels": {
+                "en": "Passport information (Celib)"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "passportInfoVarak",
+              "object": "TextValue",
+              "labels": {
+                "en": "Passport information (Varak)"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "destination",
+              "object": "TextValue",
+              "labels": {
+                "en": "Destination"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            }
+          ]
+        },
+        {
+          "name": "PhysicalCopy",
+          "super": "StillImageRepresentation",
+          "labels": {
+            "en": "Physical Copy"
+          },
+          "properties": [
+            {
+              "name": "dateOfDocument",
+              "object": "DateValue",
+              "labels": {
+                "en": "Date of Document"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "sealOfState",
+              "object": "BooleanValue",
+              "labels": {
+                "en": "Seal of State Institution?"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "sealOfStateIssuer",
+              "object": "TextValue",
+              "labels": {
+                "en": "Seal of State Institution Issuer"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "bureaucraticStamp",
+              "object": "TextValue",
+              "labels": {
+                "en": "Bureaucratic Stamp"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "secondSeal",
+              "object": "TextValue",
+              "labels": {
+                "en": "Second Seal"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "secondSealIssuer",
+              "object": "TextValue",
+              "labels": {
+                "en": "Second Seal Institution Issuer"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "placeOfStudiosPhotographersName",
+              "object": "TextValue",
+              "labels": {
+                "en": "Place of Studio's Photographer's Name"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "photographer",
+              "object": "TextValue",
+              "labels": {
+                "en": "Photographer"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "locationOfPhotographer",
+              "object": "TextValue",
+              "labels": {
+                "en": "Location of photographer"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "dateOnPhotograph",
+              "object": "DateValue",
+              "labels": {
+                "en": "Date on photograph (Bureaucratic)"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "handwrittenOnFront",
+              "object": "BooleanValue",
+              "labels": {
+                "en": "Hand-written on Front?"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "numbered",
+              "object": "BooleanValue",
+              "labels": {
+                "en": "Numbered?"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "dateOfPhotograph",
+              "object": "DateValue",
+              "labels": {
+                "en": "Date of photograph"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "backOfImage",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:BackOfImage",
+              "labels": {
+                "en": "Backside of Image"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "perforated",
+              "object": "BooleanValue",
+              "labels": {
+                "en": "Perforated?"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "printedInfoOnFront",
+              "object": "TextValue",
+              "labels": {
+                "en": "Printed Information on Front"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "writingOnFront",
+              "object": "TextValue",
+              "labels": {
+                "en": "Writing on Front"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "colorOfInk",
+              "object": "TextValue",
+              "labels": {
+                "en": "Color of Ink"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "otherNotes",
+              "object": "TextValue",
+              "labels": {
+                "en": "Other Notes"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "roiMax",
+              "object": "TextValue",
+              "labels": {
+                "en": "ROI Maximal Coordinates"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "fileName",
+              "object": "TextValue",
+              "labels": {
+                "en": "File Name"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "1"
+            },
+            {
+              "name": "sameAs",
+              "object": "TextValue",
+              "labels": {
+                "en": "Same as"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            }
+          ]
+        },
+        {
+          "name": "CoverLetter",
+          "super": "Resource",
+          "labels": {
+            "en": "Cover Letter"
+          },
+          "properties": [
+            {
+              "name": "documentIdNumber",
+              "object": "TextValue",
+              "labels": {
+                "en": "Document ID Number"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "1"
+            },
+            {
+              "name": "pageNumber",
+              "object": "TextValue",
+              "labels": {
+                "en": "Page Number"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "noPhotographsSent",
+              "object": "TextValue",
+              "labels": {
+                "en": "How many Photographs sent?"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "noPhotographs",
+              "object": "TextValue",
+              "labels": {
+                "en": "How many Photographs?"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+
+            {
+              "name": "matchingHRFile",
+              "object": "TextValue",
+              "labels": {
+                "en": "Matching HR File"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "matchingFileBEO",
+              "object": "TextValue",
+              "labels": {
+                "en": "Matching file in BEO"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "matchingFileIHUS",
+              "object": "TextValue",
+              "labels": {
+                "en": "Matching file in I HUS"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "matchingFileYildiz",
+              "object": "TextValue",
+              "labels": {
+                "en": "Matching file in Yildiz"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "matchingFileAMKT",
+              "object": "TextValue",
+              "labels": {
+                "en": "Matching file in A MKT"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "matchingFileSD",
+              "object": "TextValue",
+              "labels": {
+                "en": "Matching file in A S D"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "matchingFileDH",
+              "object": "TextValue",
+              "labels": {
+                "en": "Matching file in DH"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "familyLeftTogether",
+              "object": "BooleanValue",
+              "labels": {
+                "en": "Did the Family leave together?"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "addressor",
+              "object": "TextValue",
+              "labels": {
+                "en": "Addressor"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "addresse",
+              "object": "TextValue",
+              "labels": {
+                "en": "Addresse"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "dateOfCoverLetter",
+              "object": "DateValue",
+              "labels": {
+                "en": "Date"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "police",
+              "object": "BooleanValue",
+              "labels": {
+                "en": "Police Department"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "ministryOfForeignAffairs",
+              "object": "BooleanValue",
+              "labels": {
+                "en": "Ministry of Foreign Affairs"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "specialCommision",
+              "object": "BooleanValue",
+              "labels": {
+                "en": "Special Commision"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "detailsInDoc",
+              "object": "TextValue",
+              "labels": {
+                "en": "Details in Document"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "photograph",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:Photograph",
+              "labels": {
+                "en": "Photograph"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            }
+          ]
+        },
+        {
+          "name": "SourcedDate",
+          "super": "Resource",
+          "labels": {
+            "en": "Sourced Date"
+          },
+          "properties": [
+            {
+              "name": "dateValue",
+              "object": "DateValue",
+              "labels": {
+                "en": "Date"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "1"
+            },
+            {
+              "name": "sourceOfDate",
+              "object": "TextValue",
+              "labels": {
+                "en": "Source"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "1"
+            },
+            {
+              "name": "documentOfSource",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:Document",
+              "labels": {
+                "en": "Document"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            }
+          ]
+        },
+        {
+          "name": "SourcedText",
+          "super": "Resource",
+          "labels": {
+            "en": "Sourced Text"
+          },
+          "properties": [
+            {
+              "name": "text",
+              "object": "TextValue",
+              "labels": {
+                "en": "Text"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "1"
+            },
+            {
+              "name": "sourceOfText",
+              "object": "TextValue",
+              "labels": {
+                "en": "Source"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "1"
+            },
+            {
+              "name": "documentOfText",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:Document",
+              "labels": {
+                "en": "Document"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            }
+          ]
+        },
+        {
+          "name": "Document",
+          "super": "StillImageRepresentation",
+          "labels": {
+            "en": "Document"
+          },
+          "properties": [
+            {
+              "name": "nameOfDocument",
+              "object": "TextValue",
+
+              "labels": {
+                "en": "Name"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "1"
+            }
+          ]
+        },
+        {
+          "name": "RelatedPhotographs",
+          "super": "Resource",
+          "labels": {
+            "en": "Document"
+          },
+          "properties": [
+            {
+              "name": "relatedPeople",
+              "object": "pou:Person",
+              "labels": {
+                "en": "Related People"
+              },
+              "super" : ["hasLinkTo"],
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "1-n"
+            },
+            {
+              "name": "relationship",
+              "object": "ListValue",
+              "labels": {
+                "en": "Relationship"
+              },
+              "gui_element": "Pulldown",
+              "gui_attributes": [
+                "hlist=relation"
+              ],
+              "cardinality": "1"
+            },
+            {
+              "name": "notes",
+              "object": "TextValue",
+              "labels": {
+                "en": "Notes"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "sourceOfRelationship",
+              "object": "TextValue",
+              "labels": {
+                "en": "Source"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            },
+            {
+              "name": "documentRel",
+              "super": [
+                "hasLinkTo"
+              ],
+              "object": "pou:Document",
+              "labels": {
+                "en": "Document"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-n"
+            }
+          ]
+        },
+        {
+          "name": "PersonFile",
+          "super": "Resource",
+          "labels": {
+            "en": "Person File Help Resource"
+          },
+          "properties": [
+            {
+              "name": "documentName",
+              "object": "TextValue",
+              "labels": {
+                "en": "Document Name"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "1"
+            },
+            {
+              "name": "dateOfFile",
+              "object": "DateValue",
+              "labels": {
+                "en": "Date of File"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "issuedBy",
+              "object": "TextValue",
+              "labels": {
+                "en": "Issued by"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            },
+            {
+              "name": "addressTo",
+              "object": "TextValue",
+              "labels": {
+                "en": "Address to"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            }
+          ]
+        },
+        {
+          "name": "BackOfImage",
+          "super": "StillImageRepresentation",
+          "labels": {
+            "en": "Backside of Imagee"
+          },
+          "properties": [
+            {
+              "name": "nullProperty",
+              "object": "TextValue",
+              "labels": {
+                "en": "Dummy property for upload"
+              },
+              "gui_element": "SimpleText",
+              "gui_attributes": [
+                "size=32",
+                "maxlength=128"
+              ],
+              "cardinality": "0-1"
+            }
+          ]}]
+    }
+  }
+}

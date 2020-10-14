@@ -21,3 +21,5 @@ json = {"lageNr": "1234", "lageGrab" : 10, "lageUmgebung": "Umgebung", "lageArea
 result = con.create_resource(schema, "Lage", "test_resource",
                                                           json)
 pprint(result)
+
+

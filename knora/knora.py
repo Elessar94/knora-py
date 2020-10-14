@@ -1,4 +1,4 @@
-from typing import List, Set, Dict, Tuple, Optional
+from typing import List, Set, Dict, Tuple, Optional, Any, Union
 from urllib.parse import quote_plus
 from rdflib import Graph
 from lxml import etree
@@ -10,12 +10,11 @@ import validators
 import re
 from rfc3987 import parse
 from pprint import pprint
-
+import sys
 
 # TODO: recheck all the documentation of this file
 """
  Properties in knora-api:
-
  - :hasValue
  - :hasColor
  - :hasComment
@@ -25,9 +24,7 @@ from pprint import pprint
  - :isRegionOf
  - :isAnnotationOf
  - :seqnum
-
  Classes in knora-api:
-
  - :Resource
  - :StillImageRepresentation
  - :TextRepresentation
@@ -39,13 +36,9 @@ from pprint import pprint
  - :LinkObj -> :hasComment, :hasLinkTo, :hasLinkToValue
  - :LinkValue [reification node]
  - :Region -> :hasColor, :isRegionOf, :hasGeometry, :isRegionOfValue, :hasComment
-
  For lists:
-
  - :ListNode -> :hasSubListNode, :listNodePosition, :listNodeName, :isRootNode, :hasRootNode, :attachedToProject
-
  Values in knora-api:
-
  - :Value
  - :TextValue       -> :SimpleText, :TextArea
  - :ColorValue      -> :Colorpicker
@@ -58,9 +51,7 @@ from pprint import pprint
  - :UriValue        -> :SimpleText
  - :IntervalValue
  - :ListValue       -> :Pulldown
-
  GUI elements
-
  - :Colorpicker     -> ncolors=integer
  - :Date
  - :Geometry
@@ -89,14 +80,24 @@ class KnoraError(Exception):
 
 class KnoraStandoffXml:
     """Used to handle XML strings for standoff markup"""
+
+    iriregexp = re.compile(r'IRI:[^:]*:IRI')
+
     def __init__(self, xmlstr: str):
         self.xmlstr = xmlstr
 
     def getXml(self):
         return self.xmlstr
 
+    def findall(self):
+        return KnoraStandoffXml.iriregexp.findall(self.xmlstr)
+
+    def replace(self, fromStr: str, toStr: str):
+        self.xmlstr.replace(fromStr, toStr)
+
 
 class KnoraStandoffXmlEncoder(json.JSONEncoder):
+    """Classes used as wrapper for knora standoff-XML"""
     def default(self, obj):
         if isinstance(obj, KnoraStandoffXml):
             return obj.getXml()
@@ -116,8 +117,9 @@ class Knora:
         """
         self.server = server
         self.prefixes = prefixes
+        self.token = None
 
-    def login(self, email: str, password: str):
+    def login(self, email: str, password: str) -> None:
         """
         Method to login into KNORA which creates a session token.
         :param email: Email of user, e.g., root@example.com
@@ -138,21 +140,22 @@ class Knora:
         result = req.json()
         self.token = result["token"]
 
-    def get_token(self):
+    def get_token(self) -> str:
         return self.token
 
-    def logout(self):
-        req = requests.delete(
-            self.server + '/v2/authentication',
-            headers={'Authorization': 'Bearer ' + self.token}
-        )
-        self.on_api_error(req)
-        self.token = None
+    def logout(self) -> None:
+        if self.token is not None:
+            req = requests.delete(
+                self.server + '/v2/authentication',
+                headers={'Authorization': 'Bearer ' + self.token}
+            )
+            self.on_api_error(req)
+            self.token = None
 
     def __del__(self):
         self.logout()
 
-    def on_api_error(self, res):
+    def on_api_error(self, res) -> None:
         """
         Method to check for any API errors
         :param res: The input to check, usually JSON format
@@ -165,9 +168,12 @@ class Knora:
         if 'error' in res:
             raise KnoraError("KNORA-ERROR: API error: " + res.error)
 
-    def get_existing_projects(self, full: bool = False):
-        """Returns a list of existing projects
+    #==========================================================================
+    # project related methods
+    #
 
+    def get_existing_projects(self, full: bool = False) -> List[Any]:
+        """Returns a list of existing projects
         :return: List of existing projects
         """
 
@@ -184,9 +190,8 @@ class Knora:
             else:
                 return list(map(lambda a: a['id'], result['projects']))
 
-    def get_project(self, shortcode: str) -> dict:
+    def get_project(self, shortcode: str) -> Dict[str,Any]:
         """Returns project data of given project
-
         :param shortcode: Shortcode of object
         :return: JSON containing the project information
         """
@@ -201,7 +206,6 @@ class Knora:
 
     def project_exists(self, proj_iri: str) -> bool:
         """Checks if a given project exists
-
         :return: Boolean
         """
 
@@ -209,16 +213,15 @@ class Knora:
         return proj_iri in projects
 
     def create_project(
-            self,
-            shortcode: str,
-            shortname: str,
-            longname: str,
-            descriptions: Optional[Dict[str, str]] = None,
-            keywords: Optional[List[str]] = None,
-            logo: Optional[str] = None) -> str:
+        self,
+        shortcode: str,
+        shortname: str,
+        longname: str,
+        descriptions: Optional[Dict[str, str]] = None,
+        keywords: Optional[List[str]] = None,
+        logo: Optional[str] = None) -> str:
         """
         Create a new project
-
         :param shortcode: Dedicated shortcode of project
         :param shortname: Short name of the project (e.g acronym)
         :param longname: Long name of project
@@ -245,7 +248,7 @@ class Knora:
             project['logo'] = logo
 
         jsondata = json.dumps(project)
-        print(jsondata)
+        # print(jsondata)
 
         req = requests.post(self.server + "/admin/projects",
                             headers={'Content-Type': 'application/json; charset=UTF-8',
@@ -257,15 +260,15 @@ class Knora:
         return res["project"]["id"]
 
     def update_project(
-            self,
-            shortcode: str,
-            shortname: Optional[str] = None,
-            longname: Optional[str] = None,
-            descriptions: Optional[Dict[str, str]] = None,
-            keywords: Optional[List[str]] = None,
-            logo: Optional[str] = None) -> str:
+        self,
+        shortcode: str,
+        shortname: Optional[str] = None,
+        longname: Optional[str] = None,
+        descriptions: Optional[Dict[str, str]] = None,
+        keywords: Optional[List[str]] = None,
+        logo: Optional[str] = None) -> str:
         """
-
+        Update project information
         :param shortcode:
         :param shortname:
         :param longname:
@@ -298,11 +301,210 @@ class Knora:
         res = req.json()
         return res['project']['id']
 
-    def get_users(self):
+    #==========================================================================
+    # Group related methods
+    #
+
+    def get_groups(self) -> List[Dict[str,Any]]:
+        """
+        Returns the list of existing groups
+        :return: List of projects
+        """
+        url = self.server + '/admin/groups'
+
+        req = requests.get(url, headers={'Authorization': 'Bearer ' + self.token})
+
+        self.on_api_error(req)
+        res = req.json()
+
+        return res['groups']
+
+    def get_group_by_iri(self, group_iri: str) -> Dict[str,Any]:
+        """
+        Returns information about the given group
+        :param group_iri: IRI of the group
+        :return: Information about the specific group
+        """
+        url = self.server + '/admin/groups/' + quote_plus(group_iri)
+
+        req = requests.get(url, headers={'Authorization': 'Bearer ' + self.token})
+
+        self.on_api_error(req)
+        res = req.json()
+
+        return res['group']
+
+    def get_group_by_pshortname_and_gname(self,
+                                          project_shortname: str,
+                                          group_name: str) -> Union[str,None]:
+        """
+        Get a group by project shortname and group name
+        :param project_shortname: Project shortname
+        :param group_name: Group name
+        :return: IRI of the group
+        """
+        groupinfos = self.get_groups()
+        for groupinfo in groupinfos:
+            if groupinfo["project"]["shortname"] == project_shortname and groupinfo["name"] == group_name:
+                return groupinfo["id"]
+        return None
+
+    def get_group_by_pshortcode_and_gname(self,
+                                          project_shortcode: str,
+                                          group_name: str) -> Union[str, None]:
+        """
+        Get a group by project shortcode and group name
+        :param project_shortname: Project shortcode
+        :param group_name: Group name
+        :return: IRI of the group
+        """
+        groupinfos = self.get_groups()
+        for groupinfo in groupinfos:
+            if groupinfo["project"]["shortcode"] == project_shortcode and groupinfo["name"] == group_name:
+                return groupinfo["id"]
+        return None
+
+    def get_group_by_piri_and_gname(self,
+                                    project_iri: str,
+                                    group_name: str) -> Union[str, None]:
+        """
+        Get a group by project shortcode and group name
+        :param project_shortname: Project shortcode
+        :param group_name: Group name
+        :return: IRI of the group
+        """
+        groupinfos = self.get_groups()
+        for groupinfo in groupinfos:
+            if groupinfo["project"]["id"] == project_iri and groupinfo["name"] == group_name:
+                return groupinfo["id"]
+        return None
+
+    def create_group(self,
+                     project_iri: str,
+                     name: str,
+                     description: Union[str, Dict[str,str]],
+                     status: bool = True,
+                     selfjoin: bool = False) -> str:
+        """
+        Create a new group
+        :param name: Name of the group
+        :param description: Either a string with the descrioption, or a List of Dicts in the form [{"value": "descr", "language": "lang"},…]
+        :param project_iri: IRI of the project where the group belongs to
+        :param status: Active (True) or not active (False) [default: True]
+        :param selfjoin: ?? [default: False]
+        :return: IRI of the group
+        """
+
+        groupinfo = {
+            "name": name,
+            "description": description if isinstance(description, str) else list(map(lambda p: {"@language": p[0], "@value": p[1]}, description.items())),
+            "project": project_iri,
+            "status": status,
+            "selfjoin": selfjoin
+        }
+        jsondata = json.dumps(groupinfo)
+
+        url = self.server + '/admin/groups'
+
+        req = requests.post(url,
+                            headers={'Content-Type': 'application/json; charset=UTF-8',
+                                     'Authorization': 'Bearer ' + self.token},
+                            data=jsondata)
+
+        self.on_api_error(req)
+        res = req.json()
+        return res['group']['id']
+
+    def update_group(self,
+                     group_iri: str,
+                     name: Optional[str] = None,
+                     description: Optional[Union[str, Dict[str,str]]] = None,
+                     selfjoin: Optional[bool] = None) -> Union[str,None]:
+        """
+        Modify the data about a group. Only parameters that have to be changed must be indicated
+        :param group_iri: IRI of the grouo to be modified
+        :param name: New name of the group [optional]
+        :param description: Either a string with the descrioption, or a List of Dicts in the form [{"value": "descr", "language": "lang"},…] [optional]
+        :param selfjoin: True or False [optional]
+        :return: ???
+        """
+
+        groupinfo = {}
+        done = False
+        if name is not None:
+            groupinfo['name'] = name
+            done = True
+        if description is not None:
+            groupinfo['description'] = description if isinstance(description, str) else list(map(lambda p: {"@language": p[0], "@value": p[1]}, description.items()))
+            done = True
+        if selfjoin is not None:
+            groupinfo['selfjoin'] = selfjoin
+            done = True
+        if done:
+            jsondata = json.dumps(groupinfo)
+
+            url = self.server + '/admin/groups/' + quote_plus(group_iri)
+
+            req = requests.put(url,
+                                headers={'Content-Type': 'application/json; charset=UTF-8',
+                                         'Authorization': 'Bearer ' + self.token},
+                                data=jsondata)
+            self.on_api_error(req)
+            res = req.json()
+            pprint(res)
+            return res['group']['id']
+        else:
+            return None
+
+    def change_group_status(self,
+                            group_iri: str,
+                            status: bool) -> None:
+        """
+        Change the status of th group
+        :param group_iri: IRI of the group
+        :param status: Status (active: True, inactive: False)
+        :return: None
+        """
+
+        statusinfo = {
+            "status": status
+        }
+        jsondata = json.dumps(statusinfo)
+
+        url = self.server + '/admin/groups/' + quote_plus(group_iri) + '/status'
+
+        req = requests.put(url,
+                           headers={'Content-Type': 'application/json; charset=UTF-8',
+                                    'Authorization': 'Bearer ' + self.token},
+                           data=jsondata)
+        self.on_api_error(req)
+        res = req.json()
+        pprint(res)
+
+    def delete_group(self,
+                     group_iri: str) -> None:
+        """
+        Delete a group
+        :param group_iri: IRI of the group
+        :return:
+        """
+        url = self.server + '/admin/groups/' + quote_plus(group_iri)
+
+        req = requests.delete(url,
+                              headers={'Content-Type': 'application/json; charset=UTF-8',
+                                       'Authorization': 'Bearer ' + self.token})
+        self.on_api_error(req)
+        res = req.json()
+        pprint(res)
+
+    #==========================================================================
+    #  User related methods
+    #
+
+    def get_users(self) -> List[Dict[str,Any]]:
         """
         Get a list of all users
-
-        :return:
+        :return: Json result.
         """
         url = self.server + '/admin/users'
         req = requests.get(url, headers={'Authorization': 'Bearer ' + self.token})
@@ -311,10 +513,9 @@ class Knora:
         res = req.json()
         return res['users']
 
-    def get_user(self, user_iri: str):
+    def get_user_by_iri(self, user_iri: str):
         """
-        Get a list of all users
-
+        Get single user
         :return:
         """
         url = self.server + '/admin/users/iri/' + quote_plus(user_iri)
@@ -324,34 +525,47 @@ class Knora:
         res = req.json()
         return res['user']
 
+    def get_user_by_email(self, email: str):
+        """
+        Get a list of all users
+        :return:
+        """
+        url = self.server + '/admin/users/email/' + quote_plus(email)
+        req = requests.get(url, headers={'Authorization': 'Bearer ' + self.token})
+
+        self.on_api_error(req)
+        res = req.json()
+        return res['user']
+
     def create_user(self,
                     username: str,
                     email: str,
-                    givenName: str,
-                    familyName: str,
+                    given_name: str,
+                    family_name: str,
                     password: str,
-                    lang: str = "en"):
+                    lang: str = "en",
+                    sysadmin: bool = False):
         """
         Create a new user
-
         :param username: The username for login purposes (must be unique)
         :param email: The email address of the user
-        :param givenName: The given name (surname, "Vorname", ...)
-        :param familyName: The family name
+        :param given_name: The given name (surname, "Vorname", ...)
+        :param family_name: The family name
         :param password: The password for the user
         :param lang: language code, either "en", "de", "fr", "it" [default: "en"]
+        :param sysadmin: True if the user has system admin rights
         :return: The user ID as IRI
         """
 
         userinfo = {
             "username": username,
             "email": email,
-            "givenName": givenName,
-            "familyName": familyName,
+            "givenName": given_name,
+            "familyName": family_name,
             "password": password,
             "status": True,
             "lang": lang,
-            "systemAdmin": False
+            "systemAdmin": sysadmin
         }
 
         jsondata = json.dumps(userinfo)
@@ -367,15 +581,174 @@ class Knora:
 
         return res['user']['id']
 
-    def add_user_to_project(self, user_iri: str, project_iri: str):
-        url = self.server + '/admin/users/iri/' + quote_plus(user_iri) + '/project-memberships/' + quote_plus(project_iri)
+    def update_user(self,
+                    user_iri: str,
+                    username: Optional[str] = None,
+                    email:  Optional[str] = None,
+                    given_name: Optional[str] = None,
+                    family_name: Optional[str] = None,
+                    password: Optional[str] = None,
+                    lang: Optional[str] = None):
+        userinfo: Dict[str,Any] = {};
+        if username is not None:
+            userinfo["username"] = username
+        if email is not None:
+            userinfo["email"] = email
+        if given_name is not None:
+            userinfo["givenName"] = given_name
+        if family_name is not None:
+            userinfo["familyName"] = family_name
+        #if password is not None:
+        #    update_user["password"] = password
+        if lang is not None:
+            userinfo["lang"] = lang
+        if len(userinfo) > 0:
+            url = self.server + '/admin/users/iri/' + quote_plus(user_iri) + '/BasicUserInformation'
+            jsondata = json.dumps(userinfo)
+            req = requests.put(url,
+                               headers={'Content-Type': 'application/json; charset=UTF-8',
+                                        'Authorization': 'Bearer ' + self.token},
+                               data=jsondata)
+            self.on_api_error(req)
+
+    def change_user_password(self,
+                             user_iri: str,
+                             admin_password: str,
+                             new_password: str):
+        data = {
+            "requesterPassword": admin_password,
+            "newPassword": new_password
+        }
+        url = self.server + '/admin/users/iri/' + quote_plus(user_iri) + '/Password'
+        jsondata = json.dumps(data)
+        req = requests.put(url,
+                           headers={'Content-Type': 'application/json; charset=UTF-8',
+                                    'Authorization': 'Bearer ' + self.token},
+                           data=jsondata)
+        self.on_api_error(req)
+
+    def add_user_to_project(self,
+                            user_iri: str,
+                            project_iri: str):
+        """
+        Add a user to a project
+        :param user_iri: IRI of the user
+        :param project_iri: IRI of the project
+        :return: None
+        """
+        url = self.server + '/admin/users/iri/' + quote_plus(user_iri) + '/project-memberships/'\
+              + quote_plus(project_iri)
+        req = requests.post(url, headers={'Authorization': 'Bearer ' + self.token})
+        self.on_api_error(req)
+
+        return None
+
+    def rm_user_from_project(self,
+                            user_iri: str,
+                            project_iri: str):
+        """
+        Remove a user from a project
+        :param user_iri: IRI of the user
+        :param project_iri: IRI of the project
+        :return: None
+        """
+        url = self.server + '/admin/users/iri/' + quote_plus(user_iri) + '/project-memberships/' + quote_plus(
+            project_iri)
+        req = requests.delete(url, headers={'Authorization': 'Bearer ' + self.token})
+        self.on_api_error(req)
+
+        return None
+
+    def add_user_to_project_admin(self,
+                                  user_iri: str,
+                                  project_iri: str) -> None:
+        """
+        Add a user to the project admin group (knora-admin:ProjectAdmin)
+        :param user_iri: IRI of user
+        :param project_iri: IRI of project
+        :return: None
+        """
+        url = self.server + '/admin/users/iri/' + quote_plus(user_iri) + '/project-admin-memberships/' + quote_plus(
+            project_iri)
         req = requests.post(url, headers={'Authorization': 'Bearer ' + self.token})
         self.on_api_error(req)
         return None
 
+    def rm_user_from_project_admin(self,
+                                  user_iri: str,
+                                  project_iri: str) -> None:
+        """
+        Remove a user from the project admin group
+        :param user_iri: IRI of user
+        :param project_iri: IRI of project
+        :return: None
+        """
+        url = self.server + '/admin/users/iri/' + quote_plus(user_iri) + '/project-admin-memberships/' + quote_plus(
+            project_iri)
+        req = requests.delete(url, headers={'Authorization': 'Bearer ' + self.token})
+        self.on_api_error(req)
+        return None
+
+    def add_user_to_sysadmin(self, user_iri: str) -> None:
+        """
+        Add a user to the project admin group (knora-admin:ProjectAdmin)
+        :param user_iri: IRI of user
+        :param project_iri: IRI of project
+        :return: None
+        """
+        data = {
+            "systemAdmin": True
+        }
+        url = self.server + '/admin/users/iri/' + quote_plus(user_iri) + '/SystemAdmin'
+        jsondata = json.dumps(data)
+        req = requests.put(url, headers={'Content-Type': 'application/json; charset=UTF-8',
+                                         'Authorization': 'Bearer ' + self.token},
+                            data=jsondata)
+        self.on_api_error(req)
+        return None
+
+    def rm_user_from_sysadmin(self, user_iri: str) -> None:
+        """
+        Remove a user from the system admin group
+        :param user_iri: IRI of user
+        :param project_iri: IRI of project
+        :return: None
+        """
+        data = {
+            "systemAdmin": False
+        }
+        url = self.server + '/admin/users/iri/' + quote_plus(user_iri) + '/SystemAdmin'
+        jsondata = json.dumps(data)
+        req = requests.put(url, headers={'Content-Type': 'application/json; charset=UTF-8',
+                                         'Authorization': 'Bearer ' + self.token},
+                              data=jsondata)
+        self.on_api_error(req)
+        return None
+
+    def add_user_to_group(self,
+                          user_iri: str,
+                          group_iri: str) -> None:
+        url = self.server + '/admin/users/iri/' + quote_plus(user_iri) + '/group-memberships/' + quote_plus(group_iri)
+
+        req = requests.post(url, headers={'Authorization': 'Bearer ' + self.token})
+        self.on_api_error(req)
+        return None
+
+    def rm_user_from_group(self,
+                          user_iri: str,
+                          group_iri: str) -> None:
+        url = self.server + '/admin/users/iri/' + quote_plus(user_iri) + '/group-memberships/' + quote_plus(group_iri)
+
+        req = requests.delete(url, headers={'Authorization': 'Bearer ' + self.token})
+        self.on_api_error(req)
+        return None
+
+    #==========================================================================
+    # Ontology methods
+    #
+
     def get_existing_ontologies(self):
         """
-
         :return: Returns the metadata of all existing ontologies on v2/ontologies
         """
 
@@ -391,7 +764,6 @@ class Knora:
 
     def get_project_ontologies(self, project_code: str) -> Optional[dict]:
         """
-
         :param project_code:
         :return:
         """
@@ -421,7 +793,6 @@ class Knora:
     def ontology_exists(self, onto_iri: str):
         """
         Checks if an ontology exists
-
         :param onto_iri: The possible ontology iri
         :return: boolean
         """
@@ -433,7 +804,6 @@ class Knora:
     def get_ontology_lastmoddate(self, onto_iri: str):
         """
         Retrieves the lastModificationDate of a Ontology
-
         :param onto_iri: The ontology to retrieve the lastModificationDate from.
         :return: The lastModificationDate if it exists. Else, this method returns a dict with (id, None). If the ontology does not exist, it return None.
         """
@@ -447,7 +817,7 @@ class Knora:
         for onto in result['@graph']:
             if 'knora-api:lastModificationDate' in onto:
                 all_ontos.__setitem__(onto['@id'], onto['knora-api:lastModificationDate'])
-            else :
+            else:
                 all_ontos.__setitem__(onto['@id'], None)
 
         return all_ontos[onto_iri]
@@ -458,7 +828,6 @@ class Knora:
                         label: str) -> Dict[str, str]:
         """
         Create a new ontology
-
         :param onto_name: Name of the omntology
         :param project_iri: IRI of the project
         :param label: A label property for this ontology
@@ -487,17 +856,16 @@ class Knora:
         self.on_api_error(req)
 
         res = req.json()
-        #TODO: return also ontology name
+        # TODO: return also ontology name
         return {"onto_iri": res['@id'], "last_onto_date": res['knora-api:lastModificationDate']}
 
-    def delete_ontology(self, onto_iri: str, last_onto_date = None):
+    def delete_ontology(self, onto_iri: str, last_onto_date=None):
         """
         A method to delete an ontology from /v2/ontologies
-
         :param onto_iri: The ontology to delete
         :param last_onto_date: the lastModificationDate of an ontology. None by default
         :return:
-        """"" #TODO: add return documentation
+        """""  # TODO: add return documentation
         url = self.server + "/v2/ontologies/" + urllib.parse.quote_plus(onto_iri)
         req = requests.delete(url,
                               params={"lastModificationDate": last_onto_date},
@@ -511,7 +879,6 @@ class Knora:
                            name: str):
         """
         Returns the turtle definition of the ontology.
-
         :param shortcode: Shortcode of the project
         :param name: Name of the ontology
         :return:
@@ -530,9 +897,9 @@ class Knora:
                          class_name: str,
                          super_class: List[str],
                          labels: Dict[str, str],
-                         comments: Optional[Dict[str, str]] = None) -> Dict[str, str]:
+                         comments: Optional[Dict[str, str]] = None,
+                         permissions: Optional[Dict[str, str]] = None) -> Dict[str, str]:
         """Creates a knora resource class
-
         :param onto_iri: IRI of the ontology
         :param onto_name: Name of the ontology
         :param last_onto_date: Last modification date as returned by last call
@@ -540,6 +907,7 @@ class Knora:
         :param super_class: List of super classes
         :param labels: Dict with labels in the form { lang: labeltext }
         :param comments: Dict with comments in the form { lang: commenttext }
+        :param permissions: Dict with permissions in the form
         :return: Dict with "class_iri" and "last_onto_date"
         """
 
@@ -591,21 +959,20 @@ class Knora:
         return {"class_iri": res['@graph'][0]['@id'], "last_onto_date": res['knora-api:lastModificationDate']}
 
     def create_property(
-            self,
-            onto_iri: str,
-            onto_name: str,
-            last_onto_date: str,
-            prop_name: str,
-            super_props: List[str],
-            labels: Dict[str, str],
-            gui_element: str,
-            gui_attributes: List[str] = None,
-            subject: Optional[str] = None,
-            object: Optional[str] = None,
-            comments: Optional[Dict[str, str]] = None
+        self,
+        onto_iri: str,
+        onto_name: str,
+        last_onto_date: str,
+        prop_name: str,
+        super_props: List[str],
+        labels: Dict[str, str],
+        gui_element: str,
+        gui_attributes: List[str] = None,
+        subject: Optional[str] = None,
+        object: Optional[str] = None,
+        comments: Optional[Dict[str, str]] = None
     ) -> Dict[str, str]:
         """Create a Knora property
-
         :param onto_iri: IRI of the ontology
         :param onto_name: Name of the Ontology (prefix)
         :param last_onto_date: Last modification date as returned by last call
@@ -697,16 +1064,15 @@ class Knora:
         return {"prop_iri": res['@graph'][0]['@id'], "last_onto_date": res['knora-api:lastModificationDate']}
 
     def create_cardinality(
-            self,
-            onto_iri: str,
-            onto_name: str,
-            last_onto_date: str,
-            class_iri: str,
-            prop_iri: str,
-            occurrence: str
+        self,
+        onto_iri: str,
+        onto_name: str,
+        last_onto_date: str,
+        class_iri: str,
+        prop_iri: str,
+        occurrence: str
     ) -> Dict[str, str]:
         """Add a property with a given cardinality to a class
-
         :param onto_iri: IRI of the ontology
         :param onto_name: Name of the ontology (prefix)
         :param last_onto_date: Last modification date as returned by last call
@@ -770,7 +1136,6 @@ class Knora:
                          parent_iri: Optional[str] = None) -> str:
         """
         Creates a new list node. If there is no parent, a root node is created
-
         :param project_iri: IRI of the project
         :param labels: Dict in the form {lang: label, …} giving the label(s)
         :param comments: Dict in the form {lang: comment, …} giving the comment(s)
@@ -825,7 +1190,6 @@ class Knora:
         """
         Get the lists belonging to a certain project identified by its shortcode
         :param shortcode: Project shortcode
-
         :return: JSON with the lists
         """
         url = self.server + "/admin/lists?projectIri=" + quote_plus("http://rdfh.ch/projects/" + shortcode)
@@ -836,7 +1200,6 @@ class Knora:
     def get_complete_list(self, list_iri: str):
         """
         Get all the data (nodes) of a specific list
-
         :param list_iri: IRI of the list
         :return: JSON containing the list info including all nodes
         """
@@ -870,11 +1233,16 @@ class Knora:
         self.on_api_error(req)
         return req.json()
 
-    def create_resource(self, schema: Dict, res_class: str, label: str, values: Dict, stillimage = None):
+    def create_resource(self,
+                        schema: Dict,
+                        res_class: str,
+                        label: str,
+                        values: Dict,
+                        permissions: Optional[str] = None,
+                        stillimage: Optional[str] = None):
         """
         This method creates a new resource (instance of a resource class) with the
         default permissions.
-
         :param schema: The schema of the ontology as returned by the method "create_schema()"
         :param res_class: The resource class of the resource to be created
         :param label: The "rdfs:label" to be given to the new resource
@@ -897,6 +1265,10 @@ class Knora:
                 "@id": schema['proj_iri']
             }
         }
+
+        if permissions is not None:
+            jsondata["knora-api:hasPermissions"] = permissions
+
         if stillimage is not None:
             jsondata["knora-api:hasStillImageFileValue"] = {
                 "@type": "knora-api:StillImageFileValue",
@@ -908,10 +1280,10 @@ class Knora:
             Internal function to create the JSON-LD for one value
             :param val: the value
             :return: Dict propared for the JSON-LD for one value
-
             """
 
             if type(val) is dict:
+                pprint(val)
                 comment = val.get('comment')
                 permissions = val.get('permissions')
                 mapping = val.get('mapping')
@@ -924,6 +1296,10 @@ class Knora:
             valdict = {
                 '@type': 'knora-api:' + prop["otype"]
             }
+
+            if permissions is not None:
+                valdict["knora-api:hasPermissions"] = permissions
+
             if comment is not None:
                 valdict["knora-api:valueHasComment"] = comment
 
@@ -947,8 +1323,9 @@ class Knora:
                 #
                 # A knora date value
                 #
-                res = re.match('(GREGORIAN:|JULIAN:)?(CE:|BCE:)?(\d{4})?(-\d{1,2})?(-\d{1,2})?(:CE|:BCE)?(:\d{4})?(-\d{1,2})?(-\d{1,2})?',
-                               str(val))
+                res = re.match(
+                    '(GREGORIAN:|JULIAN:)?(CE:|BCE:)?(\d{4})?(-\d{1,2})?(-\d{1,2})?(:CE|:BCE)?(:\d{4})?(-\d{1,2})?(-\d{1,2})?',
+                    str(val))
                 if res is None:
                     raise KnoraError("Invalid date format! " + str(val))
                 dp = res.groups()
@@ -972,7 +1349,7 @@ class Knora:
                     date2 = y2 * 10000
                     if m2 is not None:
                         date2 += m2 * 100
-                    if d1 is not None:
+                    if d2 is not None:
                         date2 += d2
                     if date1 > date2:
                         y1, y2 = y2, y1
@@ -1021,13 +1398,34 @@ class Knora:
                 #
                 # a boolean value
                 #
-                valdict['knora-api:booleanValueAsBoolean']: bool(val)
+                if type(val) == bool:
+                    valdict['knora-api:booleanValueAsBoolean'] = val
+                elif type(val) == str:
+                    if val.upper() == 'TRUE':
+                        valdict['knora-api:booleanValueAsBoolean'] = True
+                    elif val.upper() == 'FALSE':
+                        valdict['knora-api:booleanValueAsBoolean'] = False
+                    else:
+                        raise KnoraError("Invalid boolean format! " + str(val))
+                elif type(val) == int:
+                    if val == 0:
+                        valdict['knora-api:booleanValueAsBoolean'] = False
+                    else:
+                        valdict['knora-api:booleanValueAsBoolean'] = True
             elif prop["otype"] == "UriValue":
                 #
                 # an URI
                 #
                 valdict['knora-api:uriValueAsUri'] = {
                     "@type": "xsd:anyURI",
+                    "@value": str(val)
+                }
+            elif prop["otype"] == "TimeValue":
+                #
+                # an URI
+                #
+                valdict['knora-api:timeValueAsTime'] = {
+                    "@type": "xsd:dateTime",
                     "@value": str(val)
                 }
             elif prop["otype"] == "IntervalValue":
@@ -1113,7 +1511,7 @@ class Knora:
             }
 
         jsonstr = json.dumps(jsondata, indent=3, separators=(',', ': '), cls=KnoraStandoffXmlEncoder)
-        # print(jsonstr)
+        print(jsonstr)
         url = self.server + "/v2/resources"
         req = requests.post(url,
                             headers={'Content-Type': 'application/json; charset=UTF-8',
@@ -1132,14 +1530,14 @@ class Knora:
     def list_creator(self, children: List):
         """
         internal Helper function
-
         :param children:
         :return:
         """
         if len(children) == 0:
             res = list(map(lambda a: {"name": a["name"], "id": a["id"]}, children))
         else:
-            res = list(map(lambda a: {"name": a["name"], "id": a["id"], "nodes": self.list_creator(a["children"])}, children))
+            res = list(
+                map(lambda a: {"name": a["name"], "id": a["id"], "nodes": self.list_creator(a["children"])}, children))
         return res
 
     def create_schema(self, shortcode: str, shortname: str):
@@ -1148,7 +1546,6 @@ class Knora:
         gets the ontology information as n3-data using the Knora API and concerts into a convenient
         python dict that can be used for further processing. It is required by the bulk import processing
         routines.
-
         :param shortcode: Shortcode of the project
         :param shortname: Short name of the ontolopgy
         :return: Dict with a simple description of the ontology
@@ -1195,7 +1592,7 @@ class Knora:
         propname = ''
         link_otypes = []
         propcnt = 0
-        propindex= {}  # we have to keep the order of the properties as given in the ontology....
+        propindex = {}  # we have to keep the order of the properties as given in the ontology....
         for row in qres:
 
             nresclass = row.res.toPython()
@@ -1318,6 +1715,7 @@ class Knora:
         #  pprint(res)
         return res
 
+
 class Sipi:
     def __init__(self, sipiserver: str, token: str):
         self.sipiserver = sipiserver
@@ -1351,14 +1749,16 @@ class BulkImport:
     def __init__(self, schema: Dict):
         self.schema = schema
         self.proj_prefix = 'p' + schema['shortcode'] + '-' + schema["ontoname"]
-        self.proj_iri = "http://api.knora.org/ontology/" + schema['shortcode'] + "/" + schema["ontoname"] + "/xml-import/v1#"
+        self.proj_iri = "http://api.knora.org/ontology/" + schema['shortcode'] + "/" + schema[
+            "ontoname"] + "/xml-import/v1#"
         self.xml_prefixes = {
             None: self.proj_iri,
             "xsi": "http://www.w3.org/2001/XMLSchema-instance",
             self.proj_prefix: self.proj_iri,
             "knoraXmlImport": "http://api.knora.org/ontology/knoraXmlImport/v1#"
         }
-        self.root = etree.Element('{http://api.knora.org/ontology/knoraXmlImport/v1#}resources', nsmap=self.xml_prefixes)
+        self.root = etree.Element('{http://api.knora.org/ontology/knoraXmlImport/v1#}resources',
+                                  nsmap=self.xml_prefixes)
         self.project_shortcode = schema["shortcode"]
 
     def new_xml_element(self, tag: str, options: Dict = None, value: str = None):
@@ -1407,7 +1807,6 @@ class BulkImport:
 
     def add_resource(self, resclass: str, id: str, label: str, properties: Dict):
         """
-
         :param resclass:
         :param id:
         :param label:
@@ -1418,7 +1817,6 @@ class BulkImport:
         def find_list_node_id(nodename: str, nodes: List):
             """
             Finds a list node ID from the nodename in a (eventually hierarchical) list of nodes
-
             :param nodename: Name of the node
             :param nodes: List of nodes
             :return: the id of the list node (an IRI)
@@ -1435,7 +1833,6 @@ class BulkImport:
         def process_properties(propinfo: Dict, valuestr: any):
             """
             Processes a property in order to generate the approptiate XML for V1 bulk import.
-
             :param pname: property name
             :param valuestr: value of the property
             :return: Tuple with xml options and processed value: (xmlopt, val)
@@ -1482,7 +1879,8 @@ class BulkImport:
                 #     exit(0)
             elif propinfo["otype"] == 'DateValue':
                 # processing and validating date format
-                res = re.match('(GREGORIAN:|JULIAN:)?(\d{4})?(-\d{1,2})?(-\d{1,2})?(:\d{4})?(-\d{1,2})?(-\d{1,2})?', str(valuestr))
+                res = re.match('(GREGORIAN:|JULIAN:)?(\d{4})?(-\d{1,2})?(-\d{1,2})?(:\d{4})?(-\d{1,2})?(-\d{1,2})?',
+                               str(valuestr))
                 if res is None:
                     raise KnoraError("Invalid date format! " + str(valuestr))
                 dp = res.groups()
@@ -1496,9 +1894,9 @@ class BulkImport:
                 if y1 is None:
                     raise KnoraError("Invalid date format! " + str(valuestr))
                 if y2 is not None:
-                    date1 = y1*10000;
+                    date1 = y1 * 10000;
                     if m1 is not None:
-                        date1 += m1*100
+                        date1 += m1 * 100
                     if d1 is not None:
                         date1 += d1
                     date2 = y2 * 10000;
@@ -1536,21 +1934,25 @@ class BulkImport:
         for prop_info in self.schema["resources"][resclass]:
             # first we check if the cardinality allows to add this property
             if properties.get(prop_info["propname"]) is None:  # this property-value is missing
-                if prop_info["card"] == 'cardinality'\
-                        and prop_info["cardval"] == 1:
-                    raise KnoraError(resclass + " requires exactly one " + prop_info["propname"] + "-value: none supplied!")
-                if prop_info["card"] == 'minCardinality'\
-                        and prop_info["cardval"] == 1:
-                    raise KnoraError(resclass + " requires at least one " + prop_info["propname"] + "-value: none supplied!")
+                if prop_info["card"] == 'cardinality' \
+                    and prop_info["cardval"] == 1:
+                    raise KnoraError(
+                        resclass + " requires exactly one " + prop_info["propname"] + "-value: none supplied!")
+                if prop_info["card"] == 'minCardinality' \
+                    and prop_info["cardval"] == 1:
+                    raise KnoraError(
+                        resclass + " requires at least one " + prop_info["propname"] + "-value: none supplied!")
                 continue
             if type(properties[prop_info["propname"]]) is list:
                 if len(properties[prop_info["propname"]]) > 1:
                     if prop_info["card"] == 'maxCardinality' \
-                            and prop_info["cardval"] == 1:
-                        raise KnoraError(resclass + " allows maximal one " + prop_info["propname"] + "-value: several supplied!")
-                    if prop_info["card"] == 'cardinality'\
-                            and prop_info["cardval"] == 1:
-                        raise KnoraError(resclass + " requires exactly one " + prop_info["propname"] + "-value: several supplied!")
+                        and prop_info["cardval"] == 1:
+                        raise KnoraError(
+                            resclass + " allows maximal one " + prop_info["propname"] + "-value: several supplied!")
+                    if prop_info["card"] == 'cardinality' \
+                        and prop_info["cardval"] == 1:
+                        raise KnoraError(
+                            resclass + " requires exactly one " + prop_info["propname"] + "-value: several supplied!")
                 for p in properties[prop_info["propname"]]:
                     xmlopt, value = process_properties(prop_info, p)
                     if xmlopt['knoraType'] == 'link_value':
@@ -1582,7 +1984,6 @@ class IrisLookup:
                                'label': '1',
                                'resourceIri': 'http://rdfh.ch/0807/rNxoIK-oR_i0-lO21Y9-CQ'},
                               {'clientResourceID': 'LM_2']}
-
         :param local_id: the local id. resulting JSON from a bulk import upload.
         :return:
         """
@@ -1637,3 +2038,12 @@ class ListsLookup:
 
     def get_lists_json(self):
         return self.lists
+
+
+if __name__ == '__main__':
+    con = Knora('http://localhost:3333')
+    con.login('root@example.com', 'test')
+    res = con.get_resource_by_label('Bertschy, Leon',
+                                    res_class="http://0.0.0.0:3333/ontology/0807/mls/v2#Lemma")
+    print('RES-IRI: ', res['@id'])
+    con.logout()
