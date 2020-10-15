@@ -103,53 +103,58 @@ class tdk_create_data:
 
     def create_bild(self, bild_file):
         listsep = '/'
-        bild_dir = "/Volumes/My Passport/191119/ubkvp-DaSCH/03-Metadaten/01-Bilder/03-Dateien/"
-
+        bild_dir = "E://191119/ubkvp-DaSCH/03-Metadaten/01-Bilder/03-Dateien/"
         json = {}
         with open(self.get_file(bild_file), encoding='utf-8') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=';', quotechar='"')
             null = next(csvreader)
             count = 0
+            skip_until = 2480
             for line in csvreader:
                 count = count + 1
+                if count < skip_until:
+                    continue
                 pprint('COUNT DONE: ' + str(count))
                 pprint('-------------------------------------')
                 for i in range(len(line)):
+                    if i == 16 or i == 7:
+                        continue
                     if line[i].find(listsep) != -1:
                         line[i] = line[i].split(listsep)
                         json = {}
                 if len(line[0]) < 12:
                     line[0] = line[0][0:8] + "0" + line[0][8:]
-                try:
-                    or_file = bild_dir + line[0] + ".tif"
-                    res = sipi.upload_image(or_file)
-                    file = res['uploadedFiles'][0]['internalFilename']
-                except:
-                    try:
-                        or_file = bild_dir + line[0] + ".jpg"
-                        res = sipi.upload_image(or_file)
-                        file = res['uploadedFiles'][0]['internalFilename']
-                    except:
-                        try:
-                            or_file = bild_dir + line[0] + ".NRW"
-                            res = sipi.upload_image(or_file)
-                            file = res['uploadedFiles'][0]['internalFilename']
-                        except:
-                            try:
-                                or_file = bild_dir + line[0] + ".CR2"
-                                res = sipi.upload_image(or_file)
-                                file = res['uploadedFiles'][0]['internalFilename']
-                            except:
-                                try:
-                                    or_file = bild_dir + line[0] + ".NEF"
-                                    res = sipi.upload_image(or_file)
-                                    file = res['uploadedFiles'][0]['internalFilename']
-                                except:
-                                    pprint("Didn't find for", line[0])
+                or_file = bild_dir + line[0] + ".tif"
+                d = os.listdir(bild_dir)
+                if line[0] + ".tif" in d:
+                    print("YES, ITS HERE")
+                res = sipi.upload_image(or_file)
+                file = res['uploadedFiles'][0]['internalFilename']
+                    # try:
+                    #     or_file = bild_dir + line[0] + ".jpg"
+                    #     res = sipi.upload_image(or_file)
+                    #     file = res['uploadedFiles'][0]['internalFilename']
+                    # except:
+                    #     try:
+                    #         or_file = bild_dir + line[0] + ".NRW"
+                    #         res = sipi.upload_image(or_file)
+                    #         file = res['uploadedFiles'][0]['internalFilename']
+                    #     except:
+                    #         try:
+                    #             or_file = bild_dir + line[0] + ".CR2"
+                    #             res = sipi.upload_image(or_file)
+                    #             file = res['uploadedFiles'][0]['internalFilename']
+                    #         except:
+                    #             try:
+                    #                 or_file = bild_dir + line[0] + ".NEF"
+                    #                 res = sipi.upload_image(or_file)
+                    #                 file = res['uploadedFiles'][0]['internalFilename']
+                    #             except:
+                    #                 pprint("Didn't find for" + line[0])
 
                 if not line[0] == "":
                     json["bildDateiname"] = line[0]
-                if not line[1] == "":
+                if not line[1] == "" and not line[1] == "?":
                         json["bildGrab"] = line[1]
                 if not line[2] == "":
                     json["bildUmgebung"] = line[2]
@@ -242,7 +247,7 @@ class tdk_create_data:
                         except KeyError:
                             json["bildSMFund"] = con.create_resource(schema, "SMFund", "SMFUND_BILD_PROXY!",
                                                               {"fundNr": find})['iri']
-                if not line[12] == "":
+                if not line[12] == "" and not line[12] == "?":
                     json["bildGefaessNr"] = line[12]
                 if not line[13] == "":
                     json["bildMaskenNr"] = line[13]
@@ -482,18 +487,18 @@ c = tdk_create_data()
 # pprint("_______________________________________")
 # pprint("Done with KAMPAGNE")
 # pprint("_______________________________________")
-c.create_zeichnungen(zeichnung_file)
-pprint("_______________________________________")
-pprint("Done with ZEICHNUNG")
-pprint("_______________________________________")
-c.create_publikation(pub_file)
-pprint("_______________________________________")
-pprint("Done with PUBLIKATION")
-pprint("_______________________________________")
-c.create_smfund(smfund_file)
-pprint("_______________________________________")
-pprint("Done with SMFUND")
-pprint("_______________________________________")
+# c.create_zeichnungen(zeichnung_file)
+# pprint("_______________________________________")
+# pprint("Done with ZEICHNUNG")
+# pprint("_______________________________________")
+# c.create_publikation(pub_file)
+# pprint("_______________________________________")
+# pprint("Done with PUBLIKATION")
+# pprint("_______________________________________")
+# c.create_smfund(smfund_file)
+# pprint("_______________________________________")
+# pprint("Done with SMFUND")
+# pprint("_______________________________________")
 c.create_bild(bild_file)
 pprint("_______________________________________")
 pprint("Done with BILD")
